@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { content } from "@/data/content";
 
 const links = [
@@ -9,6 +10,8 @@ const links = [
 ] as const;
 
 export function SiteNav() {
+  const { brand, footer } = content;
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-zinc-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-zinc-950/55">
       <nav
@@ -17,10 +20,17 @@ export function SiteNav() {
       >
         <a
           href="#hero"
-          className="shrink-0 text-sm font-semibold tracking-[0.18em] text-white transition hover:text-amber-100/90"
-          title={`${content.footer.brand} — ${content.footer.note}`}
+          className="relative flex shrink-0 items-center py-0.5 transition-opacity hover:opacity-90"
+          title={`${brand.full} · ${footer.secondaryLine}`}
         >
-          APEX
+          <Image
+            src="/logo.jpg"
+            alt={brand.logoAlt}
+            width={240}
+            height={48}
+            className="h-9 w-auto max-w-[min(220px,58vw)] sm:h-10 lg:h-11"
+            priority
+          />
         </a>
         <ul className="flex min-w-0 flex-1 items-center justify-end gap-4 overflow-x-auto py-0.5 [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-7 lg:gap-9 [&::-webkit-scrollbar]:hidden">
           {links.map((item) => (

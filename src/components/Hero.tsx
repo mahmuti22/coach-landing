@@ -34,10 +34,10 @@ export function Hero() {
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-3">
                 <span
-                  className="h-px w-10 bg-gradient-to-r from-amber-500/80 to-transparent sm:w-14"
+                  className="h-[2px] w-11 bg-gradient-to-r from-zinc-400/70 via-zinc-500/50 to-transparent sm:w-16"
                   aria-hidden="true"
                 />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400">
+                <p className="steel-eyebrow text-[11px] font-semibold uppercase tracking-[0.28em]">
                   {hero.eyebrow}
                 </p>
               </div>

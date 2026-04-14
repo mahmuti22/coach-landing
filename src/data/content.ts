@@ -1,12 +1,18 @@
 export const content = {
+  brand: {
+    full: "Most Wanted Physique Coaching",
+    short: "Most Wanted",
+    logoAlt: "Most Wanted Physique Coaching logo",
+  },
+
   hero: {
-    eyebrow: "APEX · Online Physique Coaching",
+    eyebrow: "Most Wanted · Physique coaching",
     headline: "Train with precision. Transform with Elvis & Ardit.",
     description:
-      "Serious training, clear nutrition, and weekly accountability under one APEX standard—built for men who want execution, not another reset.",
+      "Serious training, clear nutrition, and weekly accountability under one program standard—built for men who want execution, not another reset.",
     primaryCta: {
       href: "#contact",
-      label: "Apply for Coaching",
+      label: "Apply with Most Wanted",
     },
     secondaryCta: {
       href: "#programs",
@@ -14,7 +20,7 @@ export const content = {
     },
     image: {
       src: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80",
-      alt: "Athletes training — APEX online physique coaching",
+      alt: "Athletes training — Most Wanted physique coaching",
     },
     stats: [
       { value: "2", label: "Lead coaches" },
@@ -28,7 +34,7 @@ export const content = {
       eyebrow: "Head Coaches",
       title: "Led by Elvis & Ardit",
       description:
-        "APEX is a single practice: one progression model, one nutrition standard, and one expectation for how you train, log, and communicate. Elvis and Ardit split the work—you do not get two conflicting philosophies.",
+        "One practice, one progression model, and one nutrition standard—how you train, log, and communicate stays consistent. Elvis and Ardit split the work; you do not get two conflicting philosophies.",
     },
     tagline: "Two lead coaches. One system. One bar.",
     coaches: [
@@ -38,7 +44,7 @@ export const content = {
         bio: "Strength-first blocks, recovery-aware volume, and progression rules you can run without babysitting. Feedback is short, specific, and built for people who already show up.",
         image: {
           src: "/coaches/elvis.svg",
-          alt: "Elvis, head coach — APEX",
+          alt: "Elvis, head coach — Most Wanted",
         },
       },
       {
@@ -47,7 +53,7 @@ export const content = {
         bio: "Nutrition structure that survives heavy travel and long weeks. Targets stay tight; adjustments follow your data, not your mood.",
         image: {
           src: "/coaches/ardit.svg",
-          alt: "Ardit, head coach — APEX",
+          alt: "Ardit, head coach — Most Wanted",
         },
       },
     ],
@@ -63,7 +69,7 @@ export const content = {
       eyebrow: "Coaching Programs",
       title: "Pick the tier that matches your ambition—and your bandwidth.",
       description:
-        "Custom training, nutrition guardrails, and habit systems—backed by the same APEX playbook and the same coaching team. Tiers differ by depth, touch frequency, and how hard we push the weekly review.",
+        "Custom training, nutrition guardrails, and habit systems—backed by the same playbook and the same coaching team. Tiers differ by depth, touch frequency, and how hard we push the weekly review.",
     },
     cardCta: {
       href: "#contact",
@@ -207,7 +213,7 @@ export const content = {
     eyebrow: "Limited roster",
     title: "When you are ready, book a call—not a pitch deck.",
     description:
-      "Small monthly intake so notes stay fast and programming stays tight. We walk your history, schedule, equipment, and a twelve- to twenty-four-week runway—same standards Elvis and Ardit use with every client.",
+      "Small monthly intake so notes stay fast and programming stays tight. We walk your history, schedule, equipment, and a twelve- to twenty-four-week runway—the same standard Elvis and Ardit hold for every client.",
     trustPoints: [
       "Physique work: training, nutrition, accountability",
       "No template PDFs—built for your week and your gym",
@@ -219,7 +225,7 @@ export const content = {
   },
 
   footer: {
-    brand: "APEX",
-    note: "Head coaches Elvis & Ardit · Physique coaching · Training · Nutrition · Accountability",
+    primaryLine: "Most Wanted Physique Coaching — led by Elvis & Ardit",
+    secondaryLine: "Training · Nutrition · Accountability",
   },
 } as const;

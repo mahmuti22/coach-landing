@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "APEX | Elvis & Ardit — Physique coaching",
+  title: "Most Wanted Physique Coaching | Elvis & Ardit",
   description:
-    "APEX: physique coaching led by head coaches Elvis and Ardit. Training, nutrition, accountability—one standard.",
+    "Most Wanted: premium physique coaching led by Elvis and Ardit. Training, nutrition, accountability—one standard.",
 };
 
 export default function RootLayout({
