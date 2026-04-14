@@ -18,7 +18,7 @@ export function SiteNav() {
         <a
           href="#hero"
           className="shrink-0 text-sm font-semibold tracking-[0.18em] text-white transition hover:text-amber-100/90"
-          title={content.footer.brand}
+          title={`${content.footer.brand} — ${content.footer.note}`}
         >
           APEX
         </a>

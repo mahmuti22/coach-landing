@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Apex Coaching Studio",
-  description: "Premium online fitness coaching landing page.",
+  title: "APEX | Elvis & Ardit — Physique coaching",
+  description:
+    "APEX: physique coaching led by head coaches Elvis and Ardit. Training, nutrition, accountability—one standard.",
 };
 
 export default function RootLayout({
