@@ -3,6 +3,7 @@
 :root {
   --background: #09090b;
   --foreground: #f4f4f5;
+  --nav-offset: 5.5rem;
 }
 
 @theme inline {
@@ -16,6 +17,17 @@
   :root {
     --background: #09090b;
     --foreground: #f4f4f5;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 

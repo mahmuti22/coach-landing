@@ -1,3 +1,4 @@
+import { buildConsultationMailto } from "@/config/contact";
 import { content } from "@/data/content";
 import { PrimaryButton } from "./PrimaryButton";
 import { SectionContainer } from "./SectionContainer";
@@ -47,7 +48,7 @@ export function FinalCTA() {
             </ul>
             <div className="mt-10 sm:mt-12">
               <PrimaryButton
-                href={finalCta.button.href}
+                href={buildConsultationMailto()}
                 label={finalCta.button.label}
               />
             </div>

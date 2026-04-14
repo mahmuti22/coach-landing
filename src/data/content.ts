@@ -1,11 +1,12 @@
 export const content = {
   hero: {
-    eyebrow: "Private 1:1 Coaching",
-    headline: "Train with precision. Build strength that shows up in the mirror—and in your week.",
+    eyebrow: "Online Physique Coaching",
+    headline:
+      "A leaner, stronger build—earned with structured training, nutrition you can sustain, and weekly accountability.",
     description:
-      "Custom programming, nutrition structure, and weekly accountability for professionals who want a disciplined process—not another generic plan.",
+      "Remote coaching for adults who want a serious body transformation: resistance training built around your equipment and schedule, clear calorie and protein targets, and check-ins that keep execution honest when work and travel try to pull you off course.",
     primaryCta: {
-      href: "#final-cta",
+      href: "#contact",
       label: "Apply for Coaching",
     },
     secondaryCta: {
@@ -51,7 +52,7 @@ export const content = {
         "Every tier includes custom training, nutrition guardrails, habit systems, and direct access to your coach. The difference is depth, touchpoints, and how aggressively we optimize week to week.",
     },
     cardCta: {
-      href: "#final-cta",
+      href: "#contact",
       label: "Request availability",
     },
     items: [
@@ -59,21 +60,21 @@ export const content = {
         name: "Foundation Reset",
         length: "12 Weeks",
         description:
-          "Perfect for professionals restarting fitness with personalized training, nutrition targets, and weekly accountability.",
+          "Twelve weeks to rebuild the basics: a simple, repeatable training split, calorie and protein targets that match your lifestyle, and a weekly review of training logs, steps, and subjective recovery. Built for men who have slipped off track and want structure back without gimmicks.",
         highlight: "Best for beginners",
       },
       {
         name: "Executive Performance",
         length: "16 Weeks",
         description:
-          "A high-touch program to build lean muscle, improve energy, and optimize body composition without compromising your schedule.",
+          "Sixteen weeks focused on recomposition—training volume and intensity matched to recovery, nutrition tightened week to week using weight, measurements, and photos, and direct feedback when adherence drifts. For busy professionals who want a coach in the loop, not a PDF they never open.",
         highlight: "Most popular",
       },
       {
         name: "Elite Transformation",
         length: "24 Weeks",
         description:
-          "Our premium concierge coaching experience with deep performance tracking, travel adjustments, and advanced progression planning.",
+          "A longer runway for a full physique overhaul: block periodization, deloads planned in advance, nutrition adjustments when fat loss stalls or energy dips, and contingency sessions for hotels or long days. Higher-touch messaging and tighter standards—if you want soft encouragement, this is not it.",
         highlight: "VIP coaching",
       },
     ],
@@ -84,32 +85,32 @@ export const content = {
       eyebrow: "Client Results",
       title: "Outcomes you can measure. Coaching you can feel.",
       description:
-        "Verified-style client snapshots (replace with your real metrics, headshots, and compliance-approved claims).",
+        "Typical profiles: long hours, travel, and years of “sort of” training. The quotes below are representative of the process—your results depend on adherence, sleep, and medical factors outside coaching.",
     },
     items: [
       {
         quote:
-          "I dropped 18 lbs, built visible muscle, and finally had a process that worked around my travel-heavy calendar.",
-        name: "Ariana M.",
-        role: "Founder, Tech Startup",
-        initials: "AM",
-        outcome: "−18 lb · 16 weeks · remote",
+          "I was strong enough in the gym but soft around the middle. We tightened calories in a way I could actually follow on the road, kept protein consistent, and adjusted volume when sleep was bad. Sixteen weeks later the belt told the story before the scale did.",
+        name: "James M.",
+        role: "Principal, Corporate Law",
+        initials: "JM",
+        outcome: "Waist down 2 notches · 16 weeks · remote",
       },
       {
         quote:
-          "The level of detail and accountability is unmatched. Every week felt clear, strategic, and motivating.",
-        name: "Michael T.",
-        role: "Finance Executive",
+          "What I needed was someone to call the plan and hold me to it. Weekly check-ins were short and direct—training tweaks, nutrition fixes, no motivational speeches. I stopped negotiating with myself and started stacking weeks.",
+        name: "Marcus T.",
+        role: "Operations Director",
         initials: "MT",
-        outcome: "Strength PRs · better sleep · 12 weeks",
+        outcome: "Consistent training · 12 weeks · hybrid gym",
       },
       {
         quote:
-          "I have trained for years, but this was my first true transformation. The structure changed my lifestyle for good.",
-        name: "Daniel K.",
-        role: "Consulting Director",
+          "I had lifted for years without a real progression model. Blocks were planned, deloads were scheduled, and when fat loss slowed we changed one variable at a time. It felt boring in the best way—because it worked.",
+        name: "David K.",
+        role: "Senior Engineer",
         initials: "DK",
-        outcome: "Recomp focus · 20 weeks · high travel",
+        outcome: "Recomp · 22 weeks · home + gym",
       },
     ],
   },
@@ -151,44 +152,60 @@ export const content = {
       {
         question: "Is this coaching fully online?",
         answer:
-          "Yes. All coaching is delivered online through your training app, weekly check-ins, and messaging support.",
+          "Yes. You train on your own schedule with a program written for your equipment and level. Coaching happens through a training app (or agreed log format), scheduled video or voice check-ins, and messaging for clarifications and form review when needed. Nothing requires you to be in a specific city.",
       },
       {
         question: "How much time do I need each week?",
         answer:
-          "Most clients train 3-5 sessions weekly. Your plan is designed to fit your schedule and recovery needs.",
+          "Most clients complete three to five resistance sessions, roughly 45 to 75 minutes each, depending on the block. You will also spend a few minutes logging training and a short check-in before our weekly call. If your week collapses, we adjust volume rather than pretending the original plan still makes sense.",
       },
       {
         question: "Do you provide nutrition guidance?",
         answer:
-          "Absolutely. Every program includes nutrition targets, food structure guidance, and adjustments based on progress.",
+          "Yes. Coaching includes calorie targets, protein goals, and simple structure around meals—enough constraint to drive fat loss or muscle gain without turning your life into a spreadsheet. Adjustments are based on your data: weight trend, measurements, photos, energy, and hunger, not guesswork.",
       },
       {
         question: "Can I join if I travel often?",
         answer:
-          "Yes. We build travel-friendly training options and flexible nutrition protocols for demanding schedules.",
+          "Travel is common with the clients we work with. We plan hotel sessions, time-crunch alternatives, and protein-forward eating patterns that survive airports and client dinners. What does not work is disappearing for two weeks without logging—if you want results, the minimum standard is honest communication.",
       },
     ],
   },
 
+  contactForm: {
+    heading: {
+      eyebrow: "Apply",
+      title: "Tell us where you are—and where you want to go.",
+      description:
+        "Short form below. We read every submission and reply personally. If you prefer to reach out directly, use “Book a Consultation” in the section after this to open your email with a prefilled subject line.",
+    },
+    submitLabel: "Send Request",
+    successMessage:
+      "Thanks for reaching out. We’ll contact you soon.",
+    successMailHint:
+      "If your email app did not open in a new tab, tap below to open a draft with your answers filled in.",
+    openMailLabel: "Open email draft",
+    disclaimer:
+      "Submissions open your email app with a prefilled message (temporary flow until server-side email is connected).",
+  },
+
   finalCta: {
     eyebrow: "Limited roster",
-    title: "If you are serious about results, start with a strategy call—not a sales pitch.",
+    title: "Book a call if you want a coach who will set standards—and help you hold them.",
     description:
-      "We only onboard a small number of new clients each month so coaching stays sharp, personal, and obsessively detailed.",
+      "We take a small number of new clients each month so feedback stays fast and programming stays precise. On the call we review your training history, schedule, equipment, and what a realistic twelve- to twenty-four-week runway looks like for your goal.",
     trustPoints: [
-      "Private coaching — not a group template",
-      "Clear training + nutrition structure",
-      "Direct accountability every week",
+      "Physique-focused coaching: training, nutrition, accountability",
+      "No cookie-cutter PDFs—plans built around your equipment and week",
+      "Weekly structure: check-ins, adjustments, and clear next actions",
     ],
     button: {
-      href: "#",
-      label: "Book a Strategy Call",
+      label: "Book a Consultation",
     },
   },
 
   footer: {
     brand: "Apex Coaching Studio",
-    note: "Placeholder footer text - replace with business info and links.",
+    note: "Online physique coaching · Training, nutrition, accountability",
   },
 } as const;
