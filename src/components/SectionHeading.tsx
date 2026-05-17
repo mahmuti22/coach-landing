@@ -16,7 +16,7 @@ export function SectionHeading({
   return (
     <div className={`mb-12 flex flex-col gap-5 lg:mb-16 ${alignment}`}>
       {eyebrow ? (
-        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-500/85">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400">
           {eyebrow}
         </p>
       ) : null}

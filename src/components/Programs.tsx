@@ -18,25 +18,14 @@ export function Programs() {
           return (
             <article
               key={program.name}
-              className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-gradient-to-b p-7 transition duration-300 sm:p-8 ${
+              className={`metal-border group relative flex h-full flex-col overflow-hidden rounded-2xl p-7 transition duration-300 sm:p-8 ${
                 featured
-                  ? "border-amber-500/35 from-zinc-800/50 via-zinc-950/90 to-black shadow-[0_28px_80px_-24px_rgba(245,158,11,0.18),0_0_0_1px_rgba(245,158,11,0.12)_inset] md:-translate-y-1 md:scale-[1.02] md:shadow-[0_36px_100px_-28px_rgba(245,158,11,0.22)]"
-                  : "border-white/[0.08] from-zinc-800/30 to-zinc-950/95 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] hover:border-amber-500/20 hover:shadow-[0_28px_70px_-26px_rgba(0,0,0,0.75)]"
+                  ? "metal-border-featured md:-translate-y-1 md:scale-[1.02] shadow-[0_36px_100px_-28px_rgba(161,161,170,0.2)]"
+                  : "shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)]"
               }`}
             >
-              {featured ? (
-                <div
-                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/70 to-transparent"
-                  aria-hidden="true"
-                />
-              ) : (
-                <div
-                  className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
-                  aria-hidden="true"
-                />
-              )}
-              <div className="relative flex flex-1 flex-col">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-amber-500/85">
+              <div className="relative z-[1] flex flex-1 flex-col">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-400">
                   {program.highlight}
                 </p>
                 <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">
@@ -50,10 +39,10 @@ export function Programs() {
                 </p>
                 <a
                   href={programs.cardCta.href}
-                  className="mt-8 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-amber-200/95 transition group-hover:gap-3 group-hover:text-amber-100"
+                  className="mt-8 inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-zinc-200 transition group-hover:gap-3 group-hover:text-zinc-100"
                 >
                   {programs.cardCta.label}
-                  <span aria-hidden="true" className="text-amber-400/90">
+                  <span aria-hidden="true" className="text-zinc-400">
                     →
                   </span>
                 </a>

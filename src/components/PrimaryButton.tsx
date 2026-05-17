@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
 export const PRIMARY_BUTTON_CLASS =
-  "group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-b from-amber-200 via-amber-400 to-amber-800 px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.14em] text-zinc-950 shadow-[0_1px_0_rgba(255,255,255,0.35)_inset,0_18px_44px_-8px_rgba(217,119,6,0.55),0_8px_20px_-6px_rgba(0,0,0,0.55)] transition duration-200 hover:brightness-[1.06] active:scale-[0.98] active:brightness-100 disabled:pointer-events-none disabled:opacity-50";
+  "group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-b from-zinc-200 via-zinc-100 to-zinc-300 px-8 py-3.5 text-[13px] font-semibold uppercase tracking-[0.14em] text-zinc-900 shadow-[0_1px_0_rgba(255,255,255,0.4)_inset,0_18px_44px_-8px_rgba(161,161,170,0.45),0_8px_20px_-6px_rgba(0,0,0,0.55)] transition duration-200 hover:brightness-[1.06] active:scale-[0.98] active:brightness-100 disabled:pointer-events-none disabled:opacity-50";
 
 type PrimaryButtonProps = {
   href: string;

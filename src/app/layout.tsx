@@ -34,7 +34,7 @@ export default function RootLayout({
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(ellipse 100% 55% at 50% -10%, rgba(180,83,9,0.14), transparent 45%), radial-gradient(ellipse 70% 50% at 100% 0%, rgba(39,39,42,0.55), transparent 42%), radial-gradient(ellipse 50% 40% at 0% 80%, rgba(24,24,27,0.9), transparent 50%)",
+              "radial-gradient(ellipse 100% 55% at 50% -10%, rgba(161,161,170,0.12), transparent 45%), radial-gradient(ellipse 70% 50% at 100% 0%, rgba(39,39,42,0.55), transparent 42%), radial-gradient(ellipse 50% 40% at 0% 80%, rgba(24,24,27,0.9), transparent 50%)",
           }}
         />
         <div className="relative">{children}</div>

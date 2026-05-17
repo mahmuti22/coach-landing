@@ -3,8 +3,9 @@
 import type { FormEvent } from "react";
 import { useCallback, useState } from "react";
 import { buildApplicationMailto } from "@/config/contact";
+import { GOOGLE_FORM_ACTION, GOOGLE_FORM_FIELDS } from "@/config/google-form";
 import { content } from "@/data/content";
-import { PrimaryButton, PrimarySubmitButton } from "./PrimaryButton";
+import { PrimarySubmitButton } from "./PrimaryButton";
 import { SectionContainer } from "./SectionContainer";
 import { SectionHeading } from "./SectionHeading";
 
@@ -14,6 +15,27 @@ type FieldErrors = Partial<
   Record<"firstName" | "lastName" | "email" | "message", string>
 >;
 
+async function submitToGoogleForm(payload: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+}): Promise<void> {
+  const formData = new FormData();
+  formData.append(GOOGLE_FORM_FIELDS.firstName, payload.firstName);
+  formData.append(GOOGLE_FORM_FIELDS.lastName, payload.lastName);
+  formData.append(GOOGLE_FORM_FIELDS.email, payload.email);
+  formData.append(GOOGLE_FORM_FIELDS.phone, payload.phone);
+  formData.append(GOOGLE_FORM_FIELDS.message, payload.message);
+
+  await fetch(GOOGLE_FORM_ACTION, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData,
+  });
+}
+
 export function ContactForm() {
   const { contactForm } = content;
   const [firstName, setFirstName] = useState("");
@@ -22,8 +44,9 @@ export function ContactForm() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [submitted, setSubmitted] = useState(false);
-  const [mailtoUrl, setMailtoUrl] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const validate = useCallback((): boolean => {
     const next: FieldErrors = {};
@@ -32,33 +55,46 @@ export function ContactForm() {
     if (!email.trim()) next.email = "Required";
     else if (!emailPattern.test(email.trim())) next.email = "Enter a valid email";
     if (!message.trim()) next.message = "Required";
+    else if (message.trim().length < 10) {
+      next.message = "Please enter at least 10 characters";
+    }
     setErrors(next);
     return Object.keys(next).length === 0;
   }, [firstName, lastName, email, message]);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
-    const url = buildApplicationMailto({
-      firstName,
-      lastName,
-      email,
-      phone,
-      message,
-    });
-    setMailtoUrl(url);
-    setSubmitted(true);
+    const payload = {
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      message: message.trim(),
+    };
 
-    /*
-     * TEMPORARY: optional mail client handoff (keeps this page visible if blocked).
-     * Replace with server-side email/API when available.
-     */
-    window.open(url, "_blank", "noopener,noreferrer");
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      await submitToGoogleForm(payload);
+      setIsSubmitted(true);
+    } catch {
+      try {
+        const mailtoUrl = buildApplicationMailto(payload);
+        window.open(mailtoUrl, "_blank", "noopener,noreferrer");
+        setIsSubmitted(true);
+      } catch {
+        setError("Something went wrong. Please try again or email us directly.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass =
-    "w-full rounded-xl border border-white/[0.1] bg-zinc-900/50 px-4 py-3 text-[15px] text-white placeholder:text-zinc-600 shadow-inner shadow-black/20 outline-none transition focus:border-amber-500/40 focus:ring-1 focus:ring-amber-500/25";
+    "w-full rounded-xl border border-white/[0.1] bg-zinc-900/50 px-4 py-3 text-[15px] text-white placeholder:text-zinc-600 shadow-inner shadow-black/20 outline-none transition focus:border-zinc-400/40 focus:ring-1 focus:ring-zinc-400/25";
 
   return (
     <SectionContainer id="contact">
@@ -68,27 +104,16 @@ export function ContactForm() {
         description={contactForm.heading.description}
       />
 
-      {submitted ? (
-        <div className="mx-auto max-w-xl rounded-2xl border border-emerald-500/20 bg-emerald-950/20 px-8 py-10 text-center ring-1 ring-inset ring-emerald-500/10">
+      {isSubmitted ? (
+        <div className="metal-border mx-auto max-w-xl rounded-2xl px-8 py-10 text-center">
           <p className="text-lg font-medium leading-relaxed tracking-tight text-white">
-            {contactForm.successMessage}
+            ✓ Request received. We&apos;ll be in touch within 48 hours.
           </p>
-          {mailtoUrl ? (
-            <div className="mt-8 flex flex-col items-center gap-4">
-              <p className="max-w-xs text-xs leading-relaxed text-zinc-500">
-                {contactForm.successMailHint}
-              </p>
-              <PrimaryButton
-                href={mailtoUrl}
-                label={contactForm.openMailLabel}
-              />
-            </div>
-          ) : null}
         </div>
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="mx-auto max-w-2xl space-y-6"
+          className="metal-border mx-auto max-w-2xl space-y-6 rounded-2xl p-6 sm:p-8"
           noValidate
         >
           <div className="grid gap-6 sm:grid-cols-2">
@@ -107,11 +132,12 @@ export function ContactForm() {
                 value={firstName}
                 onChange={(ev) => setFirstName(ev.target.value)}
                 className={inputClass}
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.firstName)}
                 aria-describedby={errors.firstName ? "firstName-error" : undefined}
               />
               {errors.firstName ? (
-                <p id="firstName-error" className="mt-1.5 text-sm text-red-400/90">
+                <p id="firstName-error" className="mt-1.5 text-sm text-zinc-400">
                   {errors.firstName}
                 </p>
               ) : null}
@@ -131,11 +157,12 @@ export function ContactForm() {
                 value={lastName}
                 onChange={(ev) => setLastName(ev.target.value)}
                 className={inputClass}
+                disabled={isSubmitting}
                 aria-invalid={Boolean(errors.lastName)}
                 aria-describedby={errors.lastName ? "lastName-error" : undefined}
               />
               {errors.lastName ? (
-                <p id="lastName-error" className="mt-1.5 text-sm text-red-400/90">
+                <p id="lastName-error" className="mt-1.5 text-sm text-zinc-400">
                   {errors.lastName}
                 </p>
               ) : null}
@@ -158,11 +185,12 @@ export function ContactForm() {
               value={email}
               onChange={(ev) => setEmail(ev.target.value)}
               className={inputClass}
+              disabled={isSubmitting}
               aria-invalid={Boolean(errors.email)}
               aria-describedby={errors.email ? "email-error" : undefined}
             />
             {errors.email ? (
-              <p id="email-error" className="mt-1.5 text-sm text-red-400/90">
+              <p id="email-error" className="mt-1.5 text-sm text-zinc-400">
                 {errors.email}
               </p>
             ) : null}
@@ -183,6 +211,7 @@ export function ContactForm() {
               value={phone}
               onChange={(ev) => setPhone(ev.target.value)}
               className={inputClass}
+              disabled={isSubmitting}
             />
           </div>
 
@@ -200,23 +229,29 @@ export function ContactForm() {
               value={message}
               onChange={(ev) => setMessage(ev.target.value)}
               className={`${inputClass} min-h-[140px] resize-y`}
+              disabled={isSubmitting}
               aria-invalid={Boolean(errors.message)}
               aria-describedby={errors.message ? "message-error" : undefined}
             />
             {errors.message ? (
-              <p id="message-error" className="mt-1.5 text-sm text-red-400/90">
+              <p id="message-error" className="mt-1.5 text-sm text-zinc-400">
                 {errors.message}
               </p>
             ) : null}
           </div>
 
           <div className="pt-2">
-            <PrimarySubmitButton label={contactForm.submitLabel} />
+            <PrimarySubmitButton
+              label={isSubmitting ? "Sending..." : contactForm.submitLabel}
+              disabled={isSubmitting}
+            />
           </div>
 
-          <p className="text-center text-xs leading-relaxed text-zinc-600">
-            {contactForm.disclaimer}
-          </p>
+          {error ? (
+            <p className="text-center text-sm text-zinc-400" role="alert">
+              {error}
+            </p>
+          ) : null}
         </form>
       )}
     </SectionContainer>

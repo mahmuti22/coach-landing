@@ -14,7 +14,7 @@ export function AboutCoach() {
         description={aboutCoach.heading.description}
       />
 
-      <p className="mb-10 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-500/85 sm:mb-12 lg:mb-14">
+      <p className="mb-10 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400 sm:mb-12 lg:mb-14">
         {aboutCoach.tagline}
       </p>
 
@@ -22,9 +22,9 @@ export function AboutCoach() {
         {aboutCoach.coaches.map((coach) => (
           <article
             key={coach.name}
-            className="flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-zinc-800/25 to-zinc-950/95 shadow-[0_24px_70px_-32px_rgba(0,0,0,0.7)] ring-1 ring-inset ring-white/[0.04]"
+            className="metal-border relative flex flex-col overflow-hidden rounded-2xl shadow-[0_24px_70px_-32px_rgba(0,0,0,0.7)]"
           >
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/40 sm:aspect-[4/5]">
+            <div className="relative z-[1] aspect-[4/5] w-full overflow-hidden bg-black/40 sm:aspect-[4/5]">
               <Image
                 src={coach.image.src}
                 alt={coach.image.alt}
@@ -39,7 +39,7 @@ export function AboutCoach() {
                 aria-hidden="true"
               />
             </div>
-            <div className="flex flex-1 flex-col p-6 sm:p-7">
+            <div className="relative z-[1] flex flex-1 flex-col p-6 sm:p-7">
               <h3 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
                 {coach.name}
               </h3>
@@ -58,7 +58,7 @@ export function AboutCoach() {
         {aboutCoach.metrics.map((metric) => (
           <div
             key={metric.label}
-            className="rounded-xl border border-white/[0.06] bg-zinc-900/40 p-5 shadow-inner shadow-white/[0.02] ring-1 ring-inset ring-white/[0.04]"
+            className="metal-border rounded-xl p-5"
           >
             <p className="text-2xl font-semibold tracking-tight text-white">
               {metric.value}

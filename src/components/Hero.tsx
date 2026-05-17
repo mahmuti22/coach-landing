@@ -11,17 +11,17 @@ export function Hero() {
       id="hero"
       className="!py-24 md:!py-32 lg:!py-40"
     >
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-zinc-900/50 shadow-[0_32px_120px_-24px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.04] backdrop-blur-sm sm:rounded-[2.25rem]">
+      <div className="metal-border metal-border-featured relative overflow-hidden rounded-[2rem] shadow-[0_32px_120px_-24px_rgba(0,0,0,0.75)] backdrop-blur-sm sm:rounded-[2.25rem]">
         <div
-          className="pointer-events-none absolute inset-0 opacity-90"
+          className="pointer-events-none absolute inset-0 z-0 opacity-90"
           aria-hidden="true"
           style={{
             background:
-              "radial-gradient(ellipse 90% 70% at 0% 0%, rgba(245,158,11,0.16), transparent 55%), radial-gradient(ellipse 70% 55% at 100% 0%, rgba(113,113,122,0.35), transparent 50%), linear-gradient(180deg, rgba(24,24,27,0.2) 0%, rgba(9,9,11,0.92) 100%)",
+              "radial-gradient(ellipse 90% 70% at 0% 0%, rgba(161,161,170,0.14), transparent 55%), radial-gradient(ellipse 70% 55% at 100% 0%, rgba(113,113,122,0.35), transparent 50%), linear-gradient(180deg, rgba(24,24,27,0.2) 0%, rgba(9,9,11,0.92) 100%)",
           }}
         />
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          className="pointer-events-none absolute inset-0 z-0 opacity-[0.07]"
           aria-hidden="true"
           style={{
             backgroundImage:
@@ -29,7 +29,7 @@ export function Hero() {
             backgroundSize: "48px 48px",
           }}
         />
-        <div className="relative grid gap-12 p-8 sm:gap-14 sm:p-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16 lg:p-14">
+        <div className="relative z-[1] grid gap-12 p-8 sm:gap-14 sm:p-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16 lg:p-14">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="group relative min-h-[17rem] overflow-hidden rounded-2xl border border-white/[0.1] bg-black/40 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.85)] ring-1 ring-inset ring-white/[0.06] sm:min-h-[22rem] lg:min-h-0">
+          <div className="metal-border group relative z-[1] min-h-[17rem] overflow-hidden rounded-2xl bg-black/40 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.85)] sm:min-h-[22rem] lg:min-h-0">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}
@@ -86,10 +86,6 @@ export function Hero() {
             />
             <div
               className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-90"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10"
               aria-hidden="true"
             />
           </div>
