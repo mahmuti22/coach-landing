@@ -2,7 +2,6 @@ import Image from "next/image";
 import { content } from "@/data/content";
 import { PrimaryButton } from "./PrimaryButton";
 import { SectionContainer } from "./SectionContainer";
-import { SiteLogo } from "./SiteLogo";
 
 export function Hero() {
   const { hero } = content;
@@ -10,9 +9,8 @@ export function Hero() {
   return (
     <SectionContainer
       id="hero"
-      className="!pt-0 pb-24 sm:pb-28"
+      className="!py-24 md:!py-32 lg:!py-40"
     >
-      <SiteLogo />
       <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.09] bg-zinc-900/50 shadow-[0_32px_120px_-24px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.04] backdrop-blur-sm sm:rounded-[2.25rem]">
         <div
           className="pointer-events-none absolute inset-0 opacity-90"
