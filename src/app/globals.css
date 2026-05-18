@@ -30,9 +30,93 @@ html {
 }
 
 body {
-  background: var(--background);
+  background-color: #101014;
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  isolation: isolate;
+}
+
+/* Full-page dark brushed steel: fixed layers, low contrast, readable text */
+.page-metal-shell::before,
+.page-metal-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Scattered corner/side lights and shadows — hero-card style, no strict symmetry */
+.page-metal-lights {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    radial-gradient(
+      ellipse 52% 46% at 3% 5%,
+      rgba(228, 228, 231, 0.13),
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 44% 40% at 97% 8%,
+      rgba(161, 161, 170, 0.1),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 38% 48% at 95% 94%,
+      rgba(212, 212, 216, 0.11),
+      transparent 64%
+    ),
+    radial-gradient(
+      ellipse 50% 42% at 5% 91%,
+      rgba(113, 113, 122, 0.14),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 28% 32% at 82% 48%,
+      rgba(0, 0, 0, 0.2),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 32% 26% at 14% 38%,
+      rgba(0, 0, 0, 0.16),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 22% 18% at 48% 102%,
+      rgba(0, 0, 0, 0.14),
+      transparent 75%
+    ),
+    radial-gradient(
+      ellipse 20% 24% at 68% 12%,
+      rgba(244, 244, 245, 0.06),
+      transparent 68%
+    );
+  background-attachment: fixed;
+}
+
+.page-metal-shell::before {
+  z-index: -3;
+  background-color: #121216;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0.1) 42%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    linear-gradient(168deg, #222226 0%, #16161a 42%, #1c1c20 72%, #121216 100%);
+  background-size: 100% 100%, 100% 100%;
+  background-attachment: fixed;
+}
+
+.page-metal-shell::after {
+  z-index: -2;
+  opacity: 0.42;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  background-attachment: fixed;
+  mix-blend-mode: soft-light;
 }
 
 /* Hero eyebrow: restrained brushed-steel read on dark UI */
@@ -107,7 +191,13 @@ body {
 /* Brushed silver/chrome card frame */
 .metal-border {
   position: relative;
-  background: linear-gradient(180deg, #18181b 0%, #09090b 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(39, 39, 42, 0.58) 0%,
+    rgba(24, 24, 27, 0.66) 100%
+  );
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .metal-border::before {
