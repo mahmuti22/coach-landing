@@ -107,31 +107,72 @@ body {
   background: rgba(161, 161, 170, 0.35);
 }
 
-/* Hero eyebrow: restrained brushed-steel read on dark UI */
+/* Section eyebrows: chrome gradient + slow shimmer (matches card rim) */
 .steel-eyebrow {
   background-image: linear-gradient(
-    185deg,
-    #f4f4f5 0%,
-    #d4d4d8 22%,
-    #a1a1aa 55%,
-    #71717a 100%
+    135deg,
+    #52525b 0%,
+    #a1a1aa 14%,
+    #f4f4f5 28%,
+    #d4d4d8 38%,
+    #71717a 52%,
+    #e4e4e7 66%,
+    #fafafa 78%,
+    #a1a1aa 90%,
+    #52525b 100%
   );
+  background-size: 240% 100%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0.5px 0.5px rgba(0, 0, 0, 0.45));
+  animation: steel-text-shimmer 9s ease-in-out infinite;
 }
 
-/* Brushed silver effect for large section headings */
+@keyframes steel-text-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steel-eyebrow {
+    animation: none;
+    background-size: 100% 100%;
+    background-image: linear-gradient(
+      185deg,
+      #f4f4f5 0%,
+      #d4d4d8 22%,
+      #a1a1aa 55%,
+      #71717a 100%
+    );
+  }
+}
+
+/* Large section headings: chrome shimmer (matches card rim + eyebrows) */
 .steel-heading {
   background-image: linear-gradient(
-    180deg,
-    #fafafa 0%,
-    #e4e4e7 18%,
-    #a1a1aa 52%,
-    #71717a 78%,
+    135deg,
+    #52525b 0%,
+    #71717a 10%,
+    #d4d4d8 22%,
+    #fafafa 34%,
+    #e4e4e7 46%,
+    #a1a1aa 56%,
+    #f4f4f5 68%,
+    #d4d4d8 80%,
+    #71717a 92%,
     #52525b 100%
   );
+  background-size: 280% 100%;
+  background-position: 0% 50%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -139,18 +180,26 @@ body {
   filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.5))
     drop-shadow(0 0 1px rgba(244, 244, 245, 0.1));
   padding-bottom: 0.1em;
+  animation: steel-text-shimmer 11s ease-in-out infinite;
 }
 
 /* Brighter variant for the primary hero headline */
 .steel-heading-bright {
   background-image: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f4f4f5 15%,
-    #d4d4d8 45%,
-    #a1a1aa 72%,
+    135deg,
+    #71717a 0%,
+    #a1a1aa 10%,
+    #e4e4e7 22%,
+    #ffffff 34%,
+    #f4f4f5 46%,
+    #d4d4d8 56%,
+    #fafafa 68%,
+    #e4e4e7 80%,
+    #a1a1aa 92%,
     #71717a 100%
   );
+  background-size: 280% 100%;
+  background-position: 0% 50%;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -158,6 +207,35 @@ body {
   filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.6))
     drop-shadow(0 0 2px rgba(244, 244, 245, 0.15));
   padding-bottom: 0.1em;
+  animation: steel-text-shimmer 11s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steel-heading {
+    animation: none;
+    background-size: 100% 100%;
+    background-image: linear-gradient(
+      180deg,
+      #fafafa 0%,
+      #e4e4e7 18%,
+      #a1a1aa 52%,
+      #71717a 78%,
+      #52525b 100%
+    );
+  }
+
+  .steel-heading-bright {
+    animation: none;
+    background-size: 100% 100%;
+    background-image: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f4f4f5 15%,
+      #d4d4d8 45%,
+      #a1a1aa 72%,
+      #71717a 100%
+    );
+  }
 }
 
 @keyframes scroll-hint {

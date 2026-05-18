@@ -18,7 +18,7 @@ export function FinalCTA() {
           }}
         />
         <div className="relative z-[1] px-8 py-12 text-center sm:px-12 sm:py-16 lg:px-16 lg:py-20">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400">
+          <p className="steel-eyebrow text-[11px] font-semibold uppercase tracking-[0.28em]">
             {finalCta.eyebrow}
           </p>
             <h2 className="steel-heading mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-[-0.02em] sm:text-4xl lg:text-[2.5rem] lg:leading-tight">

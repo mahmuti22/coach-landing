@@ -110,7 +110,7 @@ export const content = {
     releaseNote: "Both apps targeted for release by end of 2026",
     apps: [
       {
-        name: "Tracker",
+        name: "Tracker App",
         badge: "LAUNCHING LATE 2026",
         subtitle: "Your AI coach, on your terms.",
         description:
@@ -122,7 +122,7 @@ export const content = {
         ],
       },
       {
-        name: "Coaching",
+        name: "Coaching App",
         badge: "LAUNCHING LATE 2026",
         subtitle: "Elvis and Ardit, with you every week.",
         description:
