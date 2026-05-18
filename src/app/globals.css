@@ -3,8 +3,8 @@
 :root {
   --background: #09090b;
   --foreground: #f4f4f5;
-  --page-metal-base: #0c0c0f;
-  --page-metal-deep: #08080a;
+  --page-metal-base: #101014;
+  --page-metal-deep: #0a0a0d;
 }
 
 @theme inline {
@@ -59,45 +59,21 @@ body {
   pointer-events: none;
 }
 
-/* Continuous side rim lights — even vertical strips, center stays dark */
-.page-metal-lights {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(228, 228, 231, 0.14) 0%,
-      rgba(161, 161, 170, 0.08) 4%,
-      rgba(113, 113, 122, 0.03) 10%,
-      transparent 26%
-    ),
-    linear-gradient(
-      270deg,
-      rgba(228, 228, 231, 0.14) 0%,
-      rgba(161, 161, 170, 0.08) 4%,
-      rgba(113, 113, 122, 0.03) 10%,
-      transparent 26%
-    );
-  background-attachment: fixed;
-}
-
 .page-metal-shell::before {
   z-index: -3;
   background-color: var(--page-metal-base);
   background-image:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.38) 0%,
-      rgba(0, 0, 0, 0.18) 42%,
-      rgba(0, 0, 0, 0.32) 100%
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.12) 42%,
+      rgba(0, 0, 0, 0.24) 100%
     ),
     linear-gradient(
       168deg,
-      #161618 0%,
-      #0e0e10 42%,
-      #121214 72%,
+      #1a1a1e 0%,
+      #121216 42%,
+      #16161a 72%,
       var(--page-metal-base) 100%
     );
   background-size: 100% 100%, 100% 100%;

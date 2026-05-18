@@ -29,7 +29,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="page-metal-shell relative min-h-full overflow-x-hidden text-zinc-100 antialiased">
-        <div className="page-metal-lights" aria-hidden="true" />
         <div className="relative z-0">{children}</div>
       </body>
     </html>
