@@ -89,6 +89,24 @@ body {
   mix-blend-mode: soft-light;
 }
 
+.testimonials-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(161, 161, 170, 0.35) transparent;
+}
+
+.testimonials-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.testimonials-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.testimonials-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(161, 161, 170, 0.35);
+}
+
 /* Hero eyebrow: restrained brushed-steel read on dark UI */
 .steel-eyebrow {
   background-image: linear-gradient(

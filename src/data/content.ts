@@ -102,37 +102,35 @@ export const content = {
 
   upcomingPlatform: {
     heading: {
-      eyebrow: "WHAT'S COMING",
-      title: "Two apps. One ecosystem. Built for how you actually train.",
+      eyebrow: "TWO WAYS IN",
+      title: "AI or human. Pick the support you want.",
       description:
-        "Most Wanted is extending beyond weekly coaching into dedicated software—first a focused tracker, then a full coaching platform. No waitlists or sign-up forms here; this is a preview of what ships next.",
+        "Two apps in development for late 2026. One powered by an AI coach for people who want autonomy. One built around Elvis and Ardit for people who want the team in their corner.",
     },
     releaseNote: "Both apps targeted for release by end of 2026",
     apps: [
       {
-        name: "Tracker App",
-        badge: "Coming soon",
-        subtitle: "Training + nutrition",
+        name: "Tracker",
+        badge: "LAUNCHING LATE 2026",
+        subtitle: "Your AI coach, on your terms.",
         description:
-          "Log sessions, meals, and body metrics in one place—built for athletes who want clarity without a bloated dashboard.",
+          "For people who want structure without the wait. Build training and nutrition plans manually, or let the AI coach design them around your goals, schedule, and equipment. The Most Wanted standard, available 24/7.",
         features: [
-          "Workout logging with sets, reps, and RPE",
-          "Macro and calorie tracking tied to coach targets",
-          "Weight, measurements, and progress photos in one timeline",
-          "Weekly adherence view for you and your coach",
+          "AI coach for instant plan generation",
+          "Full manual control when you want it",
+          "Training and nutrition tracked in one place",
         ],
       },
       {
-        name: "Coaching App",
-        badge: "Coming soon",
-        subtitle: "Full coaching platform",
+        name: "Coaching",
+        badge: "LAUNCHING LATE 2026",
+        subtitle: "Elvis and Ardit, with you every week.",
         description:
-          "The complete client experience: programming, communication, and accountability in a single app—designed around how Elvis and Ardit already coach.",
+          "For clients in the coaching program. Programs, check-ins, video form reviews, and payments in one place—plus direct access to Elvis and Ardit. Human coaching, built for execution.",
         features: [
-          "Direct chat with your coaching team",
-          "Structured check-ins and habit reviews",
-          "Program delivery with exercise demos and video",
-          "Payments and plan management in one flow",
+          "Programs designed by your coach",
+          "Weekly check-ins and direct coach chat",
+          "Video form reviews and payments built in",
         ],
       },
     ],
@@ -169,6 +167,30 @@ export const content = {
         role: "Senior Engineer",
         initials: "DK",
         outcome: "Recomp · 22 weeks · home + gym",
+      },
+      {
+        quote:
+          "Travel used to wreck my diet every month. We built a simple structure for hotels and long days—protein anchors, easy swaps, no perfectionism. Check-ins caught drift early instead of after a bad week.",
+        name: "Sarah L.",
+        role: "Management Consultant",
+        initials: "SL",
+        outcome: "Travel-proof nutrition · 14 weeks · online",
+      },
+      {
+        quote:
+          "I wanted muscle without looking sloppy. Training volume climbed in planned steps, calories moved in small adjustments, and I always knew what the next week required. No guesswork, no program hopping.",
+        name: "Omar H.",
+        role: "Product Lead",
+        initials: "OH",
+        outcome: "Lean gain · 20 weeks · commercial gym",
+      },
+      {
+        quote:
+          "The weekly review kept me honest. Photos, scale trend, session quality—if something slipped, we fixed one lever. That rhythm is what finally made progress feel predictable instead of random.",
+        name: "Chris P.",
+        role: "Founder",
+        initials: "CP",
+        outcome: "Fat loss · 18 weeks · home gym",
       },
     ],
   },
