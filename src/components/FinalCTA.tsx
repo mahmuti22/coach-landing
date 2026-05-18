@@ -21,7 +21,7 @@ export function FinalCTA() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400">
             {finalCta.eyebrow}
           </p>
-          <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-[-0.02em] text-white sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            <h2 className="steel-heading mx-auto mt-5 max-w-3xl text-3xl font-semibold tracking-[-0.02em] sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
             {finalCta.title}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">

@@ -18,11 +18,11 @@ export function AboutCoach() {
         {aboutCoach.tagline}
       </p>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
+      <div className="card-grid-3d grid gap-8 md:grid-cols-2 lg:gap-10">
         {aboutCoach.coaches.map((coach) => (
           <article
             key={coach.name}
-            className="metal-border relative flex flex-col overflow-hidden rounded-2xl shadow-[0_24px_70px_-32px_rgba(0,0,0,0.7)]"
+            className="metal-border card-hover-3d relative flex flex-col overflow-hidden rounded-2xl shadow-[0_24px_70px_-32px_rgba(0,0,0,0.7)]"
           >
             <div className="relative z-[1] aspect-[4/5] w-full overflow-hidden bg-black/40 sm:aspect-[4/5]">
               <Image
@@ -54,11 +54,11 @@ export function AboutCoach() {
         ))}
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-3 sm:gap-3 lg:mt-16 lg:gap-4">
+      <div className="card-grid-3d mt-12 grid grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-3 sm:gap-3 lg:mt-16 lg:gap-4">
         {aboutCoach.metrics.map((metric) => (
           <div
             key={metric.label}
-            className="metal-border rounded-xl p-5"
+            className="metal-border card-hover-3d rounded-xl p-5"
           >
             <p className="text-2xl font-semibold tracking-tight text-white">
               {metric.value}

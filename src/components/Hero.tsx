@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <SectionContainer
       id="hero"
-      className="!py-24 md:!py-32 lg:!py-40"
+      className="!py-16 md:!py-20 lg:!py-28"
     >
       <div className="metal-border metal-border-featured relative overflow-hidden rounded-[2rem] shadow-[0_32px_120px_-24px_rgba(0,0,0,0.75)] backdrop-blur-sm sm:rounded-[2.25rem]">
         <div
@@ -41,7 +41,7 @@ export function Hero() {
                   {hero.eyebrow}
                 </p>
               </div>
-              <h1 className="max-w-[22ch] text-4xl font-semibold tracking-[-0.03em] text-white sm:max-w-none sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
+              <h1 className="steel-heading-bright max-w-[22ch] text-4xl font-semibold tracking-[-0.03em] sm:max-w-none sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
                 {hero.headline}
               </h1>
               <p className="max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed">
@@ -75,7 +75,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="metal-border group relative z-[1] min-h-[17rem] overflow-hidden rounded-2xl bg-black/40 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.85)] sm:min-h-[22rem] lg:min-h-0">
+          <div className="metal-border card-hover-3d group relative z-[1] min-h-[17rem] overflow-hidden rounded-2xl bg-black/40 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.85)] sm:min-h-[22rem] lg:min-h-0">
             <Image
               src={hero.image.src}
               alt={hero.image.alt}

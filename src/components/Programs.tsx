@@ -12,15 +12,15 @@ export function Programs() {
         title={programs.heading.title}
         description={programs.heading.description}
       />
-      <div className="grid gap-6 md:grid-cols-3 md:items-stretch md:gap-5 lg:gap-8">
+      <div className="card-grid-3d grid gap-6 md:grid-cols-3 md:items-stretch md:gap-5 lg:gap-8">
         {programs.items.map((program) => {
           const featured = program.highlight === "Most popular";
           return (
             <article
               key={program.name}
-              className={`metal-border group relative flex h-full flex-col overflow-hidden rounded-2xl p-7 transition duration-300 sm:p-8 ${
+              className={`metal-border card-hover-3d group relative flex h-full flex-col overflow-hidden rounded-2xl p-7 sm:p-8 ${
                 featured
-                  ? "metal-border-featured md:-translate-y-1 md:scale-[1.02] shadow-[0_36px_100px_-28px_rgba(161,161,170,0.2)]"
+                  ? "metal-border-featured card-hover-3d-featured shadow-[0_36px_100px_-28px_rgba(161,161,170,0.2)]"
                   : "shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)]"
               }`}
             >

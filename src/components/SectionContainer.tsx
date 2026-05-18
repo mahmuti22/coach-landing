@@ -14,7 +14,7 @@ export function SectionContainer({
   return (
     <section
       id={id}
-      className={`px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-32 ${className}`}
+      className={`px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20 ${className}`}
     >
       <div className="mx-auto w-full max-w-6xl">{children}</div>
     </section>

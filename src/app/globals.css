@@ -50,6 +50,44 @@ body {
   filter: drop-shadow(0 0.5px 0.5px rgba(0, 0, 0, 0.45));
 }
 
+/* Brushed silver effect for large section headings */
+.steel-heading {
+  background-image: linear-gradient(
+    180deg,
+    #fafafa 0%,
+    #e4e4e7 18%,
+    #a1a1aa 52%,
+    #71717a 78%,
+    #52525b 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 1px rgba(244, 244, 245, 0.1));
+  padding-bottom: 0.1em;
+}
+
+/* Brighter variant for the primary hero headline */
+.steel-heading-bright {
+  background-image: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f4f4f5 15%,
+    #d4d4d8 45%,
+    #a1a1aa 72%,
+    #71717a 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 2px rgba(244, 244, 245, 0.15));
+  padding-bottom: 0.1em;
+}
+
 @keyframes scroll-hint {
   0%,
   100% {
@@ -132,4 +170,42 @@ body {
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.15),
     0 0 40px rgba(244, 244, 245, 0.08);
+}
+
+/* 3D lift + scale on hover for content cards */
+.card-grid-3d {
+  perspective: 1200px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-hover-3d {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition:
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.45s ease;
+    will-change: transform;
+  }
+
+  .card-hover-3d:hover {
+    transform: translateY(-10px) scale(1.04) rotateX(2deg);
+    box-shadow:
+      0 32px 90px -28px rgba(0, 0, 0, 0.85),
+      0 0 48px rgba(244, 244, 245, 0.07);
+    z-index: 2;
+  }
+
+  .card-hover-3d-featured {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .card-hover-3d-featured:hover {
+    transform: translateY(-14px) scale(1.05) rotateX(2.5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover-3d:hover {
+    transform: none;
+  }
 }

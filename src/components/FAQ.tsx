@@ -12,7 +12,7 @@ export function FAQ() {
         {faq.items.map((item) => (
           <details
             key={item.question}
-            className="metal-border group relative overflow-hidden rounded-2xl transition"
+            className="metal-border card-hover-3d group relative overflow-hidden rounded-2xl"
           >
             <summary className="relative z-[1] cursor-pointer list-none px-6 py-5 text-base font-semibold leading-snug text-white sm:px-7 sm:py-5">
               <span className="flex items-start justify-between gap-4">

@@ -23,11 +23,11 @@ export function Testimonials() {
         title={testimonials.heading.title}
         description={testimonials.heading.description}
       />
-      <div className="grid gap-6 md:grid-cols-3 lg:gap-8">
+      <div className="card-grid-3d grid gap-6 md:grid-cols-3 lg:gap-8">
         {testimonials.items.map((testimonial) => (
           <figure
             key={testimonial.name}
-            className="metal-border relative flex h-full flex-col overflow-hidden rounded-2xl p-7 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.7)] sm:p-8"
+            className="metal-border card-hover-3d relative flex h-full flex-col overflow-hidden rounded-2xl p-7 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.7)] sm:p-8"
           >
             <div
               className="pointer-events-none absolute right-0 top-0 z-0 h-32 w-32 translate-x-1/3 -translate-y-1/3 rounded-full bg-zinc-400/10 blur-3xl"
