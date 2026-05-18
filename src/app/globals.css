@@ -59,52 +59,26 @@ body {
   pointer-events: none;
 }
 
-/* Scattered corner/side lights and shadows — hero-card style, no strict symmetry */
+/* Continuous side rim lights — even vertical strips, center stays dark */
 .page-metal-lights {
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
   background-image:
-    radial-gradient(
-      ellipse 52% 46% at 3% 5%,
-      rgba(228, 228, 231, 0.12),
-      transparent 62%
+    linear-gradient(
+      90deg,
+      rgba(228, 228, 231, 0.14) 0%,
+      rgba(161, 161, 170, 0.08) 4%,
+      rgba(113, 113, 122, 0.03) 10%,
+      transparent 26%
     ),
-    radial-gradient(
-      ellipse 44% 40% at 97% 8%,
-      rgba(161, 161, 170, 0.11),
-      transparent 58%
-    ),
-    radial-gradient(
-      ellipse 38% 48% at 95% 94%,
-      rgba(212, 212, 216, 0.11),
-      transparent 64%
-    ),
-    radial-gradient(
-      ellipse 50% 42% at 5% 91%,
-      rgba(161, 161, 170, 0.13),
-      transparent 60%
-    ),
-    radial-gradient(
-      ellipse 28% 32% at 82% 48%,
-      rgba(0, 0, 0, 0.2),
-      transparent 72%
-    ),
-    radial-gradient(
-      ellipse 32% 26% at 14% 38%,
-      rgba(0, 0, 0, 0.16),
-      transparent 70%
-    ),
-    radial-gradient(
-      ellipse 22% 18% at 48% 102%,
-      rgba(0, 0, 0, 0.14),
-      transparent 75%
-    ),
-    radial-gradient(
-      ellipse 20% 24% at 68% 12%,
-      rgba(244, 244, 245, 0.1),
-      transparent 68%
+    linear-gradient(
+      270deg,
+      rgba(228, 228, 231, 0.14) 0%,
+      rgba(161, 161, 170, 0.08) 4%,
+      rgba(113, 113, 122, 0.03) 10%,
+      transparent 26%
     );
   background-attachment: fixed;
 }
