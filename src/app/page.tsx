@@ -8,6 +8,7 @@ import { VideoHero } from "@/components/VideoHero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Programs } from "@/components/Programs";
 import { Testimonials } from "@/components/Testimonials";
+import { UpcomingPlatform } from "@/components/UpcomingPlatform";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <AboutCoach />
       <Programs />
+      <UpcomingPlatform />
       <Testimonials />
       <HowItWorks />
       <FAQ />

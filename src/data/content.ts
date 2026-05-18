@@ -100,6 +100,44 @@ export const content = {
     ],
   },
 
+  upcomingPlatform: {
+    heading: {
+      eyebrow: "WHAT'S COMING",
+      title: "Two apps. One ecosystem. Built for how you actually train.",
+      description:
+        "Most Wanted is extending beyond weekly coaching into dedicated software—first a focused tracker, then a full coaching platform. No waitlists or sign-up forms here; this is a preview of what ships next.",
+    },
+    releaseNote: "Both apps targeted for release by end of 2026",
+    apps: [
+      {
+        name: "Tracker App",
+        badge: "Coming soon",
+        subtitle: "Training + nutrition",
+        description:
+          "Log sessions, meals, and body metrics in one place—built for athletes who want clarity without a bloated dashboard.",
+        features: [
+          "Workout logging with sets, reps, and RPE",
+          "Macro and calorie tracking tied to coach targets",
+          "Weight, measurements, and progress photos in one timeline",
+          "Weekly adherence view for you and your coach",
+        ],
+      },
+      {
+        name: "Coaching App",
+        badge: "Coming soon",
+        subtitle: "Full coaching platform",
+        description:
+          "The complete client experience: programming, communication, and accountability in a single app—designed around how Elvis and Ardit already coach.",
+        features: [
+          "Direct chat with your coaching team",
+          "Structured check-ins and habit reviews",
+          "Program delivery with exercise demos and video",
+          "Payments and plan management in one flow",
+        ],
+      },
+    ],
+  },
+
   testimonials: {
     heading: {
       eyebrow: "Client Results",
