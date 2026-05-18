@@ -3,6 +3,8 @@
 :root {
   --background: #09090b;
   --foreground: #f4f4f5;
+  --page-metal-base: #0c0c0f;
+  --page-metal-deep: #08080a;
 }
 
 @theme inline {
@@ -30,10 +32,22 @@ html {
 }
 
 body {
-  background-color: #101014;
+  background-color: var(--page-metal-deep);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   isolation: isolate;
+}
+
+/* Video hero → page: long fade matched to metal background (no hard seam) */
+.video-hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.52) 0%,
+    rgba(0, 0, 0, 0.38) 28%,
+    color-mix(in srgb, var(--page-metal-base) 48%, transparent) 58%,
+    color-mix(in srgb, var(--page-metal-base) 82%, transparent) 82%,
+    var(--page-metal-base) 100%
+  );
 }
 
 /* Full-page dark brushed steel: fixed layers, low contrast, readable text */
@@ -54,12 +68,12 @@ body {
   background-image:
     radial-gradient(
       ellipse 52% 46% at 3% 5%,
-      rgba(228, 228, 231, 0.13),
+      rgba(228, 228, 231, 0.12),
       transparent 62%
     ),
     radial-gradient(
       ellipse 44% 40% at 97% 8%,
-      rgba(161, 161, 170, 0.1),
+      rgba(161, 161, 170, 0.11),
       transparent 58%
     ),
     radial-gradient(
@@ -69,7 +83,7 @@ body {
     ),
     radial-gradient(
       ellipse 50% 42% at 5% 91%,
-      rgba(113, 113, 122, 0.14),
+      rgba(161, 161, 170, 0.13),
       transparent 60%
     ),
     radial-gradient(
@@ -89,7 +103,7 @@ body {
     ),
     radial-gradient(
       ellipse 20% 24% at 68% 12%,
-      rgba(244, 244, 245, 0.06),
+      rgba(244, 244, 245, 0.1),
       transparent 68%
     );
   background-attachment: fixed;
@@ -97,15 +111,21 @@ body {
 
 .page-metal-shell::before {
   z-index: -3;
-  background-color: #121216;
+  background-color: var(--page-metal-base);
   background-image:
     linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.28) 0%,
-      rgba(0, 0, 0, 0.1) 42%,
-      rgba(0, 0, 0, 0.22) 100%
+      rgba(0, 0, 0, 0.38) 0%,
+      rgba(0, 0, 0, 0.18) 42%,
+      rgba(0, 0, 0, 0.32) 100%
     ),
-    linear-gradient(168deg, #222226 0%, #16161a 42%, #1c1c20 72%, #121216 100%);
+    linear-gradient(
+      168deg,
+      #161618 0%,
+      #0e0e10 42%,
+      #121214 72%,
+      var(--page-metal-base) 100%
+    );
   background-size: 100% 100%, 100% 100%;
   background-attachment: fixed;
 }
@@ -193,8 +213,8 @@ body {
   position: relative;
   background: linear-gradient(
     180deg,
-    rgba(39, 39, 42, 0.58) 0%,
-    rgba(24, 24, 27, 0.66) 100%
+    rgba(48, 48, 52, 0.55) 0%,
+    rgba(32, 32, 36, 0.62) 100%
   );
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);

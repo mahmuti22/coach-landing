@@ -64,7 +64,7 @@ export function VideoHero() {
 
   return (
     <section
-      className="relative h-screen w-full overflow-hidden bg-black"
+      className="relative h-screen w-full overflow-hidden bg-[var(--page-metal-base)]"
       aria-label="Most Wanted Physique Coaching"
     >
       <video
@@ -79,15 +79,7 @@ export function VideoHero() {
         <source src="/hero-video.mp4" type="video/mp4" />
       </video>
 
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/90"
-        aria-hidden="true"
-      />
-
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-zinc-950"
-        aria-hidden="true"
-      />
+      <div className="video-hero-overlay absolute inset-0" aria-hidden="true" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <Image
