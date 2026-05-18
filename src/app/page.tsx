@@ -17,9 +17,9 @@ export default function Home() {
       <Hero />
       <AboutCoach />
       <Programs />
-      <UpcomingPlatform />
       <Testimonials />
       <HowItWorks />
+      <UpcomingPlatform />
       <FAQ />
       <ContactForm />
       <FinalCTA />
