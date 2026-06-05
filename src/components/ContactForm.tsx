@@ -12,7 +12,7 @@ import { SectionHeading } from "./SectionHeading";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type FieldErrors = Partial<
-  Record<"firstName" | "lastName" | "email" | "message", string>
+  Record<"firstName" | "lastName" | "email" | "coach" | "message", string>
 >;
 
 async function submitToFormspree(payload: {
@@ -20,6 +20,7 @@ async function submitToFormspree(payload: {
   lastName: string;
   email: string;
   phone: string;
+  coach: string;
   message: string;
 }): Promise<void> {
   const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -33,6 +34,7 @@ async function submitToFormspree(payload: {
       Nachname: payload.lastName,
       email: payload.email,
       Telefon: payload.phone,
+      Coach: payload.coach,
       Nachricht: payload.message,
     }),
   });
@@ -48,6 +50,7 @@ export function ContactForm() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [coach, setCoach] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,13 +65,14 @@ export function ContactForm() {
     if (!lastName.trim()) next.lastName = errorMessages.required;
     if (!email.trim()) next.email = errorMessages.required;
     else if (!emailPattern.test(email.trim())) next.email = errorMessages.email;
+    if (!coach.trim()) next.coach = errorMessages.required;
     if (!message.trim()) next.message = errorMessages.required;
     else if (message.trim().length < 10) {
       next.message = errorMessages.messageLength;
     }
     setErrors(next);
     return Object.keys(next).length === 0;
-  }, [firstName, lastName, email, message, errorMessages]);
+  }, [firstName, lastName, email, coach, message, errorMessages]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -79,6 +83,9 @@ export function ContactForm() {
       lastName: lastName.trim(),
       email: email.trim(),
       phone: phone.trim(),
+      coach:
+        contactForm.coachOptions.find((option) => option.value === coach)
+          ?.label ?? coach.trim(),
       message: message.trim(),
     };
 
@@ -103,6 +110,15 @@ export function ContactForm() {
 
   const inputClass =
     "w-full rounded-xl border border-white/[0.1] bg-zinc-900/50 px-4 py-3 text-[15px] text-white placeholder:text-zinc-600 shadow-inner shadow-black/20 outline-none transition focus:border-zinc-400/40 focus:ring-1 focus:ring-zinc-400/25";
+
+  const coachOptionClass = (selected: boolean) =>
+    [
+      "flex min-h-[3.25rem] cursor-pointer flex-col items-center justify-center rounded-xl border px-3 py-2.5 text-center transition duration-200",
+      selected
+        ? "border-zinc-300/35 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]"
+        : "border-white/[0.1] bg-zinc-900/40 text-zinc-400 hover:border-white/20 hover:text-zinc-200",
+      isSubmitting ? "pointer-events-none opacity-60" : "",
+    ].join(" ");
 
   return (
     <SectionContainer id="contact">
@@ -225,6 +241,54 @@ export function ContactForm() {
               disabled={isSubmitting}
             />
           </div>
+
+          <fieldset className="min-w-0 border-0 p-0">
+            <legend className="mb-3 block text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">
+              {contactForm.labels.coach}
+            </legend>
+
+            <div
+              className="grid grid-cols-1 gap-2 sm:grid-cols-3"
+              role="radiogroup"
+              aria-invalid={Boolean(errors.coach)}
+              aria-describedby={errors.coach ? "coach-error" : undefined}
+            >
+              {contactForm.coachOptions.map((option) => {
+                const selected = coach === option.value;
+
+                return (
+                  <label
+                    key={option.value}
+                    className={coachOptionClass(selected)}
+                  >
+                    <input
+                      type="radio"
+                      name="coach"
+                      value={option.value}
+                      checked={selected}
+                      onChange={() => setCoach(option.value)}
+                      disabled={isSubmitting}
+                      className="sr-only"
+                    />
+                    <span className="text-[14px] font-medium leading-snug tracking-tight">
+                      {option.label}
+                    </span>
+                    {"description" in option ? (
+                      <span className="mt-0.5 text-[11px] leading-snug text-zinc-500">
+                        {option.description}
+                      </span>
+                    ) : null}
+                  </label>
+                );
+              })}
+            </div>
+
+            {errors.coach ? (
+              <p id="coach-error" className="mt-2 text-sm text-zinc-400">
+                {errors.coach}
+              </p>
+            ) : null}
+          </fieldset>
 
           <div>
             <label

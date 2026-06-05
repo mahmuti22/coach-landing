@@ -222,8 +222,14 @@ export const content = {
       email: "E-Mail",
       phone: "Telefon",
       phoneOptional: "(optional)",
+      coach: "Coach",
       message: "Nachricht / Ziel",
     },
+    coachOptions: [
+      { value: "elvis", label: "Elvis Krasniqi" },
+      { value: "ardit", label: "Ardit Percuku" },
+      { value: "any", label: "Mir ist egal" },
+    ],
     errors: {
       required: "Pflichtfeld",
       email: "Bitte eine gültige E-Mail-Adresse eingeben",

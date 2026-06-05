@@ -13,6 +13,7 @@ export type ApplicationFormPayload = {
   lastName: string;
   email: string;
   phone: string;
+  coach: string;
   message: string;
 };
 
@@ -36,6 +37,7 @@ export function buildApplicationMailto(payload: ApplicationFormPayload): string 
   if (payload.phone.trim()) {
     lines.push(`Telefon: ${payload.phone.trim()}`);
   }
+  lines.push(`Coach: ${payload.coach.trim()}`);
   lines.push("", "Nachricht / Ziel:", payload.message.trim());
 
   const subject = encodeURIComponent(MAILTO_SUBJECTS.application);
