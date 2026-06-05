@@ -273,11 +273,6 @@ export function ContactForm() {
                     <span className="text-[14px] font-medium leading-snug tracking-tight">
                       {option.label}
                     </span>
-                    {"description" in option ? (
-                      <span className="mt-0.5 text-[11px] leading-snug text-zinc-500">
-                        {option.description}
-                      </span>
-                    ) : null}
                   </label>
                 );
               })}
