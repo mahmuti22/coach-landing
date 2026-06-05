@@ -11,12 +11,18 @@ export function AboutCoach() {
       <SectionHeading
         eyebrow={aboutCoach.heading.eyebrow}
         title={aboutCoach.heading.title}
-        description={aboutCoach.heading.description}
       />
 
-      <p className="mb-10 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-400 sm:mb-12 lg:mb-14">
-        {aboutCoach.tagline}
-      </p>
+      <div className="mb-10 flex max-w-3xl flex-col gap-5 sm:mb-12 lg:mb-14">
+        {aboutCoach.intro.map((paragraph) => (
+          <p
+            key={paragraph.slice(0, 24)}
+            className="text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed"
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
 
       <div className="card-grid-3d grid gap-8 md:grid-cols-2 lg:gap-10">
         {aboutCoach.coaches.map((coach) => (
@@ -51,22 +57,6 @@ export function AboutCoach() {
               </p>
             </div>
           </article>
-        ))}
-      </div>
-
-      <div className="card-grid-3d mt-12 grid grid-cols-1 gap-4 sm:mt-14 sm:grid-cols-3 sm:gap-3 lg:mt-16 lg:gap-4">
-        {aboutCoach.metrics.map((metric) => (
-          <div
-            key={metric.label}
-            className="metal-border card-hover-3d rounded-xl p-5"
-          >
-            <p className="text-2xl font-semibold tracking-tight text-white">
-              {metric.value}
-            </p>
-            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-500">
-              {metric.label}
-            </p>
-          </div>
         ))}
       </div>
     </SectionContainer>

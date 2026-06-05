@@ -1,11 +1,11 @@
 /**
  * Central contact targets — swap CONTACT_EMAIL when moving off the test inbox.
  */
-export const CONTACT_EMAIL = "irfan.mahmuti@hotmail.com";
+export const CONTACT_EMAIL = "info@mwp.ch";
 
 export const MAILTO_SUBJECTS = {
-  consultation: "Coaching Consultation Request",
-  application: "Coaching Application Request",
+  consultation: "Coaching Beratungsanfrage",
+  application: "Coaching Bewerbung",
 } as const;
 
 export type ApplicationFormPayload = {
@@ -29,14 +29,14 @@ export function buildConsultationMailto(): string {
  */
 export function buildApplicationMailto(payload: ApplicationFormPayload): string {
   const lines = [
-    `First name: ${payload.firstName.trim()}`,
-    `Last name: ${payload.lastName.trim()}`,
-    `Email: ${payload.email.trim()}`,
+    `Vorname: ${payload.firstName.trim()}`,
+    `Nachname: ${payload.lastName.trim()}`,
+    `E-Mail: ${payload.email.trim()}`,
   ];
   if (payload.phone.trim()) {
-    lines.push(`Phone: ${payload.phone.trim()}`);
+    lines.push(`Telefon: ${payload.phone.trim()}`);
   }
-  lines.push("", "Message / goal:", payload.message.trim());
+  lines.push("", "Nachricht / Ziel:", payload.message.trim());
 
   const subject = encodeURIComponent(MAILTO_SUBJECTS.application);
   const body = encodeURIComponent(lines.join("\n"));

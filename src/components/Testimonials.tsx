@@ -25,7 +25,7 @@ export function Testimonials() {
       />
 
       <p className="mb-5 text-[11px] font-medium uppercase tracking-[0.2em] text-zinc-500 md:mb-6">
-        Scroll to see more results
+        {testimonials.scrollHint}
       </p>
 
       <div className="relative -mx-5 sm:-mx-8 lg:-mx-12">
@@ -33,9 +33,9 @@ export function Testimonials() {
           className="testimonials-scroll card-grid-3d flex gap-5 overflow-x-auto overscroll-x-contain scroll-smooth px-5 pb-3 pt-1 snap-x snap-mandatory sm:gap-6 sm:px-8 lg:gap-8 lg:px-12"
           role="list"
         >
-          {testimonials.items.map((testimonial) => (
+          {testimonials.items.map((testimonial, index) => (
             <figure
-              key={testimonial.name}
+              key={index}
               role="listitem"
               className="metal-border card-hover-3d relative flex w-[min(88vw,22rem)] shrink-0 snap-start flex-col overflow-hidden rounded-2xl p-7 shadow-[0_24px_70px_-30px_rgba(0,0,0,0.7)] sm:w-[24rem] sm:p-8 lg:w-[26rem]"
             >

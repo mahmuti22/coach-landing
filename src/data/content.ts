@@ -6,131 +6,121 @@ export const content = {
   },
 
   hero: {
-    eyebrow: "Most Wanted · Physique coaching",
-    headline: "Train with precision. Transform with Elvis & Ardit.",
+    eyebrow: "Most Wanted · Physique Coaching",
+    headline: "Du trainierst. Du versuchst es. Aber dein Körper bleibt gleich.",
     description:
-      "Serious training, clear nutrition, and weekly accountability under one program standard—built for men who want execution, not another reset.",
+      "Viel Geld auf dem Konto, aber kein Körper der das spiegelt. Das ist nicht Most Wanted Physique. Wir geben dir die Hebel, die dir fehlen. Und das Warum, das Disziplin zur Selbstverständlichkeit macht.",
     primaryCta: {
       href: "#contact",
-      label: "Apply with Most Wanted",
+      label: "Jetzt bewerben",
     },
     secondaryCta: {
-      href: "#programs",
-      label: "Explore Programs",
+      href: "#coaching",
+      label: "Was du bekommst",
     },
     image: {
       src: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80",
       alt: "Athletes training — Most Wanted physique coaching",
     },
-    stats: [
-      { value: "2", label: "Lead coaches" },
-      { value: "Weekly", label: "Check-ins" },
-      { value: "Elite", label: "Programming" },
-    ],
   },
 
   aboutCoach: {
     heading: {
-      eyebrow: "Head Coaches",
-      title: "Led by Elvis & Ardit",
-      description:
-        "One practice, one progression model, and one nutrition standard—how you train, log, and communicate stays consistent. Elvis and Ardit split the work; you do not get two conflicting philosophies.",
+      eyebrow: "Über uns",
+      title: "Zwei Coaches. Eine Methode. Keine Ausreden.",
     },
-    tagline: "Two lead coaches. One system. One bar.",
+    intro: [
+      "Elvis und Ardit haben zusammen über 11 Jahre Erfahrung im Krafttraining und Coaching. Bei Most Wanted Physique Coaching trifft Wissen auf Erfahrung und genau da entsteht Expertise. Das Beste aus beiden Welten, kombiniert in einer Methode.",
+      "Sie arbeiten nicht mit jedem. Sie arbeiten mit Menschen, die verstanden haben: Es reicht nicht, erfolgreich zu sein. Wer das Beste aus sich rausholt, investiert nicht nur in sein Konto, sondern auch in seinen Körper. Wer mit Bierbauch im Anzug sitzt, ist nicht Most Wanted Physique.",
+      "Most Wanted Physique Coaching ist kein Fitnesskurs. Es ist ein Transformationsprozess mit klarer Struktur, individuellem Training und Ernährungsplanung, die in dein Leben passt, nicht umgekehrt. Kein Trial and Error. Keine verlorenen Monate. Nur ein System das funktioniert, weil wir wissen wo die Hebel sind.",
+    ],
     coaches: [
       {
-        name: "Elvis",
+        name: "Elvis Krasniqi",
         role: "Head Coach",
-        bio: "Strength-first blocks, recovery-aware volume, and progression rules you can run without babysitting. Feedback is short, specific, and built for people who already show up.",
+        bio: "Elvis trainiert seit 11 Jahren. Was ihn antreibt, hat er früh gelernt: Jahre im Fussball haben ihm gezeigt, was Disziplin und strukturiertes Training wirklich bedeuten. Er hat einen Bachelor in Ingenieurwesen gemacht. Er denkt in Systemen und Strukturen. Das spiegelt sich direkt in seiner Coaching-Methode wider. Er hat viele Klienten durch ihren Transformationsprozess begleitet und weiss, wo die meisten scheitern und wie man das verhindert.",
         image: {
           src: "/coaches/elvis.svg",
-          alt: "Elvis, head coach — Most Wanted",
+          alt: "Elvis Krasniqi, Head Coach — Most Wanted",
         },
       },
       {
-        name: "Ardit",
+        name: "Ardit Percuku",
         role: "Head Coach",
-        bio: "Nutrition structure that survives heavy travel and long weeks. Targets stay tight; adjustments follow your data, not your mood.",
+        bio: "Ardit und Elvis haben diese Journey zusammen begonnen. Beide mit Wurzeln im Fussball, beide auf hohem Niveau gespielt. Diese gemeinsame Basis zeigt sich in der Art, wie sie trainieren und coachen. Ardit hat einen Bachelor in Betriebsökonomie gemacht. Er bringt Struktur, Planung und einen klaren Blick für das grosse Ganze mit. Seitdem hat er vielen Menschen geholfen, ihre körperlichen Ziele tatsächlich zu erreichen. Nicht irgendwann, sondern mit einem Plan der funktioniert.",
         image: {
           src: "/coaches/ardit.svg",
-          alt: "Ardit, head coach — Most Wanted",
+          alt: "Ardit Percuku, Head Coach — Most Wanted",
         },
       },
     ],
-    metrics: [
-      { label: "Clients coached", value: "1,200+" },
-      { label: "Avg. body fat reduction", value: "9.5%" },
-      { label: "5-star client reviews", value: "300+" },
-    ],
   },
 
-  programs: {
+  mindset: {
     heading: {
-      eyebrow: "Coaching Programs",
-      title: "Pick the tier that matches your ambition—and your bandwidth.",
-      description:
-        "Custom training, nutrition guardrails, and habit systems—backed by the same playbook and the same coaching team. Tiers differ by depth, touch frequency, and how hard we push the weekly review.",
+      eyebrow: "Mindset",
+      title:
+        "Wir bauen keine Gymbesucher. Wir bauen Menschen die Most Wanted sind.",
     },
-    cardCta: {
-      href: "#contact",
-      label: "Request availability",
-    },
-    items: [
+    lead: "Lass uns direkt sein.",
+    body: [
       {
-        name: "Foundation Reset",
-        length: "12 Weeks",
-        description:
-          "Twelve weeks to rebuild the basics: a simple, repeatable training split, calorie and protein targets that match your lifestyle, and a weekly review of training logs, steps, and subjective recovery. Built for men who have slipped off track and want structure back without gimmicks.",
-        highlight: "Best for beginners",
+        text: "Die meisten Menschen die ins Gym gehen, sehen nach zwei Jahren immer noch gleich aus. Nicht weil sie faul sind. Sondern weil sie die falschen Gründe haben und die richtigen Hebel nicht kennen.",
+        emphasis: false,
       },
       {
-        name: "Executive Performance",
-        length: "16 Weeks",
-        description:
-          "Sixteen weeks focused on recomposition—training volume and intensity matched to recovery, nutrition tightened week to week using weight, measurements, and photos, and direct feedback when adherence drifts. For busy professionals who want the coaching team in the loop, not a PDF they never open.",
-        highlight: "Most popular",
+        text: "Sie trainieren um andere zu beeindrucken. Um abzuhaken dass sie „Sport gemacht haben“. Ohne echtes Warum, ohne System, ohne Richtung. Das Ergebnis: eine Optik die genau das widerspiegelt. Mittelmaß.",
+        emphasis: false,
+      },
+      { text: "Wir glauben an etwas anderes.", emphasis: true },
+      {
+        text: "Wer wirklich erfolgreich ist, hört nicht beim Kontostand auf. Viel Geld mit einem Körper der keine Disziplin ausstrahlt. Das ist nicht Most Wanted Physique. Der Körper ist die sichtbarste Form von Selbstrespekt. Er lügt nicht.",
+        emphasis: false,
       },
       {
-        name: "Elite Transformation",
-        length: "24 Weeks",
-        description:
-          "A longer runway for a full physique overhaul: block periodization, deloads planned in advance, nutrition adjustments when fat loss stalls or energy dips, and contingency sessions for hotels or long days. Higher-touch messaging and tighter standards—if you want soft encouragement, this is not it.",
-        highlight: "VIP coaching",
+        text: "Das Problem ist nicht Willensstärke. Das Problem ist fehlendes Wissen über die richtigen Hebel. Wenn du weisst wo du ansetzen musst, an Training, Ernährung, Regeneration, ist der Aufwand halb so gross und das Ergebnis doppelt so stark. Genau das ist unsere Aufgabe: dir diese Hebel zu geben.",
+        emphasis: false,
+      },
+      {
+        text: "Bei Most Wanted Physique Coaching geht es zuerst um das richtige Warum. Denn wenn das Warum stimmt, folgt Disziplin als Nebenprodukt. Du musst dich nicht jeden Tag motivieren. Du weisst einfach warum du es tust.",
+        emphasis: false,
       },
     ],
+    closing:
+      "Wissen trifft Erfahrung. Daraus entsteht Expertise. Das ist Most Wanted Physique.",
   },
 
-  upcomingPlatform: {
+  whatYouGet: {
     heading: {
-      eyebrow: "TWO WAYS IN",
-      title: "AI or human. Pick the support you want.",
+      eyebrow: "Was du bekommst",
+      title: "Was steckt im Coaching?",
       description:
-        "Two apps in development for late 2026. One powered by an AI coach for people who want autonomy. One built around Elvis and Ardit for people who want the team in their corner.",
+        "Du bekommst kein generisches Programm, das du auch auf Google gefunden hättest. Du bekommst ein System, das auf dich zugeschnitten ist. Dein Körper, dein Alltag, deine Ziele.",
     },
-    releaseNote: "Both apps targeted for release by end of 2026",
-    apps: [
+    cards: [
       {
-        name: "Tracker App",
-        badge: "LAUNCHING LATE 2026",
-        subtitle: "Your AI coach, on your terms.",
-        description:
-          "For people who want structure without the wait. Build training and nutrition plans manually, or let the AI coach design them around your goals, schedule, and equipment. The Most Wanted standard, available 24/7.",
+        name: "Persönliches Coaching",
+        badge: "Coaching",
+        subtitle: "Im Coaching enthalten",
+        description: "",
         features: [
-          "AI coach for instant plan generation",
-          "Full manual control when you want it",
-          "Training and nutrition tracked in one place",
+          "Individueller Trainingsplan mit regelmässigen Anpassungen",
+          "Ernährungsplan ohne dass du dein Leben umkrempeln musst",
+          "Technikanalyse per Video-Feedback",
+          "Täglicher Austausch per Chat",
+          "Wöchentliche Check-ins zur Fortschrittskontrolle",
         ],
       },
       {
-        name: "Coaching App",
-        badge: "LAUNCHING LATE 2026",
-        subtitle: "Elvis and Ardit, with you every week.",
+        name: "Self Coaching App",
+        badge: "Coming Soon",
+        subtitle: "Bald verfügbar",
         description:
-          "For clients in the coaching program. Programs, check-ins, video form reviews, and payments in one place—plus direct access to Elvis and Ardit. Human coaching, built for execution.",
+          "Für alle die Struktur wollen, ohne Wartezeit. Erstelle Trainings- und Ernährungspläne manuell oder lass den AI Coach sie auf deine Ziele, deinen Alltag und dein Equipment abstimmen. Der Most Wanted Standard, verfügbar rund um die Uhr.",
         features: [
-          "Programs designed by your coach",
-          "Weekly check-ins and direct coach chat",
-          "Video form reviews and payments built in",
+          "AI Coach für sofortige Planerstellung",
+          "Volle manuelle Kontrolle wann du willst",
+          "Training und Ernährung an einem Ort",
         ],
       },
     ],
@@ -138,154 +128,121 @@ export const content = {
 
   testimonials: {
     heading: {
-      eyebrow: "Client Results",
-      title: "Outcomes you can measure. Coaching you can feel.",
+      eyebrow: "Testimonials",
+      title: "Ergebnisse, die für sich sprechen.",
       description:
-        "Busy professionals, heavy travel, years of half-committed training. Outcomes still hinge on sleep, adherence, and factors outside coaching—these snapshots show what happens when the standard is held.",
+        "Diese Testimonials sind Platzhalter und werden durch echte Kundenstimmen ersetzt.",
     },
+    scrollHint: "Zum Scrollen für mehr Ergebnisse",
     items: [
       {
-        quote:
-          "I was strong enough in the gym but soft around the middle. We tightened calories in a way I could actually follow on the road, kept protein consistent, and adjusted volume when sleep was bad. Sixteen weeks later the belt told the story before the scale did.",
-        name: "James M.",
-        role: "Principal, Corporate Law",
-        initials: "JM",
-        outcome: "Waist down 2 notches · 16 weeks · remote",
+        quote: "[Placeholder – Name, Alter, Ergebnis nach X Wochen]",
+        name: "[Name]",
+        role: "[Alter · Beruf]",
+        initials: "MW",
+        outcome: "[Ergebnis nach X Wochen]",
       },
       {
-        quote:
-          "What I needed was someone to call the plan and hold me to it. Weekly check-ins were short and direct—training tweaks, nutrition fixes, no motivational speeches. I stopped negotiating with myself and started stacking weeks.",
-        name: "Marcus T.",
-        role: "Operations Director",
-        initials: "MT",
-        outcome: "Consistent training · 12 weeks · hybrid gym",
+        quote: "[Placeholder – Name, Alter, Ergebnis nach X Wochen]",
+        name: "[Name]",
+        role: "[Alter · Beruf]",
+        initials: "MW",
+        outcome: "[Ergebnis nach X Wochen]",
       },
       {
-        quote:
-          "I had lifted for years without a real progression model. Blocks were planned, deloads were scheduled, and when fat loss slowed we changed one variable at a time. It felt boring in the best way—because it worked.",
-        name: "David K.",
-        role: "Senior Engineer",
-        initials: "DK",
-        outcome: "Recomp · 22 weeks · home + gym",
-      },
-      {
-        quote:
-          "Travel used to wreck my diet every month. We built a simple structure for hotels and long days—protein anchors, easy swaps, no perfectionism. Check-ins caught drift early instead of after a bad week.",
-        name: "Sarah L.",
-        role: "Management Consultant",
-        initials: "SL",
-        outcome: "Travel-proof nutrition · 14 weeks · online",
-      },
-      {
-        quote:
-          "I wanted muscle without looking sloppy. Training volume climbed in planned steps, calories moved in small adjustments, and I always knew what the next week required. No guesswork, no program hopping.",
-        name: "Omar H.",
-        role: "Product Lead",
-        initials: "OH",
-        outcome: "Lean gain · 20 weeks · commercial gym",
-      },
-      {
-        quote:
-          "The weekly review kept me honest. Photos, scale trend, session quality—if something slipped, we fixed one lever. That rhythm is what finally made progress feel predictable instead of random.",
-        name: "Chris P.",
-        role: "Founder",
-        initials: "CP",
-        outcome: "Fat loss · 18 weeks · home gym",
+        quote: "[Placeholder – Name, Alter, Ergebnis nach X Wochen]",
+        name: "[Name]",
+        role: "[Alter · Beruf]",
+        initials: "MW",
+        outcome: "[Ergebnis nach X Wochen]",
       },
     ],
   },
 
-  howItWorks: {
-    stepPrefix: "Step",
+  whyItWorks: {
     heading: {
-      eyebrow: "How It Works",
-      title: "A tight process. Zero fluff. Maximum signal each week.",
+      eyebrow: "Warum es funktioniert",
+      title: "Der Unterschied zwischen Training und Transformation",
     },
-    steps: [
-      {
-        step: "01",
-        title: "Apply and Align",
-        description:
-          "Submit the application so we can review your goals, training history, equipment, and schedule. One intake. One standard—whether you work most closely with Elvis, Ardit, or both under the same system.",
-      },
-      {
-        step: "02",
-        title: "Build Your Blueprint",
-        description:
-          "The team maps a training and nutrition plan around your recovery, metrics, and non-negotiables. Same playbook, same progression rules—executed with the discipline you would expect from a serious coaching practice.",
-      },
-      {
-        step: "03",
-        title: "Execute with Accountability",
-        description:
-          "Weekly check-ins, program updates, and clear next actions keep you moving. Feedback stays sharp because roster size stays controlled and standards stay non-negotiable.",
-      },
+    body: [
+      "Die meisten Menschen scheitern nicht am Willen. Sie scheitern am Plan. Sie trainieren ohne Struktur, essen ohne System und wundern sich, warum sich nach sechs Monaten nichts verändert hat.",
+      "Wir lösen genau dieses Problem. Kein Rätselraten. Keine Motivation-Posts. Nur ein klares System, das funktioniert, weil es auf deinem Leben basiert, nicht auf einem Ideal.",
     ],
   },
 
   faq: {
     heading: {
       eyebrow: "FAQ",
-      title: "Before you start.",
+      title: "Bevor du startest.",
     },
     items: [
       {
-        question: "Is this coaching fully online?",
+        question: "Schaut der Coach beim Training immer zu und motiviert einen?",
         answer:
-          "Yes. You train on your own schedule with programming written for your equipment and level. Coaching is delivered through the agreed app or log format, scheduled video or voice check-ins, and messaging for clarifications and form review. Nothing requires you to be in a specific city.",
+          "Nein und das ist auch nicht der Job. 1:1 Online Coaching ist nicht dasselbe wie Personal Training. Du bekommst kein Babysitting auf dem Gym-Floor. Du bekommst ein System: Trainingsplan, Ernährungsplan, Video-Feedback zur Technik, wöchentliche Check-ins und täglichen Austausch. Der Coach analysiert, korrigiert und passt an. Die Arbeit machst du. Wer jemanden braucht der neben ihm steht und klatscht, hat das falsche Fundament. Disziplin kommt von innen oder sie kommt gar nicht. Genau dafür findest du bei uns das richtige Warum.",
       },
       {
-        question: "How much time do I need each week?",
+        question: "Für wen ist das Coaching?",
         answer:
-          "Most clients complete three to five resistance sessions, roughly 45 to 75 minutes each, depending on the block. You will also spend a few minutes logging training and a short check-in before the weekly review. If the week collapses, we adjust volume instead of pretending the original plan still fits.",
+          "Für Menschen, die verstanden haben dass Mittelmass keine Option ist. Egal ob Anfänger oder Fortgeschrittene. Was zählt, ist die Bereitschaft, einem System zu folgen und das eigene Warum zu kennen.",
       },
       {
-        question: "Do you provide nutrition guidance?",
+        question: "Wie läuft das Coaching ab?",
         answer:
-          "Yes. Coaching includes calorie targets, protein goals, and simple meal structure—enough constraint to drive fat loss or muscle gain without turning life into a spreadsheet. Adjustments follow your data: weight trend, measurements, photos, energy, and hunger.",
+          "Nach der Bewerbung folgt ein kurzes Onboarding. Du bekommst deinen Plan, wir starten. Alles läuft remote. Du brauchst kein Fitnessstudio in der Nähe von uns.",
       },
       {
-        question: "Can I join if I travel often?",
+        question: "Muss ich eine spezielle Diät einhalten?",
         answer:
-          "Travel is normal for the clients we serve. We build hotel sessions, time-crunch alternatives, and protein-forward patterns that survive airports and client dinners. What does not work is disappearing for two weeks without logging—if you want results, the minimum standard is honest communication with the team.",
+          "Nein. Dein Ernährungsplan wird auf deinen Alltag angepasst. Was du in der Kantine bekommst, was du abends isst. Das alles fliesst ein.",
+      },
+      {
+        question: "Was, wenn ich keine Fortschritte mache?",
+        answer:
+          "Das ist genau der Moment, für den wir da sind. Wöchentliche Check-ins existieren dafür, Blockaden früh zu erkennen und den Plan anzupassen. Bevor aus zwei schlechten Wochen sechs Monate Stillstand werden.",
+      },
+      {
+        question: "Wie lange dauert das Coaching?",
+        answer:
+          "Mindestlaufzeit 12 Wochen. Danach monatlich kündbar.",
       },
     ],
   },
 
   contactForm: {
     heading: {
-      eyebrow: "Apply",
-      title: "Tell us where you are—and where you want to go.",
+      eyebrow: "Bewerbung",
+      title: "Bereit aufzuhören zu improvisieren?",
       description:
-        "Use the form below. We read what you send and reply directly. Prefer email first? Use “Book a Consultation” next—it opens a draft with the subject line already set.",
+        "Du hast lange genug ausprobiert, was nicht funktioniert. Du kennst jetzt die Hebel. Du weisst was möglich ist wenn das Warum stimmt. Der Plan existiert bereits. Du musst ihn nur annehmen.",
     },
-    submitLabel: "Send Request",
+    labels: {
+      firstName: "Vorname",
+      lastName: "Nachname",
+      email: "E-Mail",
+      phone: "Telefon",
+      phoneOptional: "(optional)",
+      message: "Nachricht / Ziel",
+    },
+    errors: {
+      required: "Pflichtfeld",
+      email: "Bitte eine gültige E-Mail-Adresse eingeben",
+      messageLength: "Bitte mindestens 10 Zeichen eingeben",
+      generic:
+        "Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt.",
+    },
+    submitLabel: "Jetzt bewerben",
+    submittingLabel: "Wird gesendet...",
     successMessage:
-      "Thanks for reaching out. We’ll contact you soon.",
-    successMailHint:
-      "If your email app did not open in a new tab, tap below to open a draft with your answers filled in.",
-    openMailLabel: "Open email draft",
-    disclaimer:
-      "Submissions open your email app with a prefilled message (temporary flow until server-side email is connected).",
-  },
-
-  finalCta: {
-    eyebrow: "Limited roster",
-    title: "When you are ready, book a call—not a pitch deck.",
-    description:
-      "Small monthly intake so notes stay fast and programming stays tight. We walk your history, schedule, equipment, and a twelve- to twenty-four-week runway—the same standard Elvis and Ardit hold for every client.",
-    trustPoints: [
-      "Physique work: training, nutrition, accountability",
-      "No template PDFs—built for your week and your gym",
-      "Weekly rhythm: check-ins, adjustments, next actions",
-    ],
-    button: {
-      label: "Book a Consultation",
-    },
+      "✓ Bewerbung erhalten. Wir melden uns innerhalb von 48 Stunden bei dir.",
   },
 
   footer: {
-    primaryLine: "Most Wanted Physique Coaching — led by Elvis & Ardit",
-    secondaryLine: "Training · Nutrition · Accountability",
+    primaryLine: "Most Wanted Physique Coaching — Elvis & Ardit",
+    secondaryLine: "Training · Ernährung · Disziplin",
+    credit: {
+      label: "Website by Irfan Mahmuti",
+      href: "mailto:irfan.mahmuti@hotmail.com",
+    },
   },
 } as const;

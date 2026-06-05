@@ -1,12 +1,11 @@
 import { AboutCoach } from "@/components/AboutCoach";
 import { ContactForm } from "@/components/ContactForm";
 import { FAQ } from "@/components/FAQ";
-import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
+import { Mindset } from "@/components/Mindset";
 import { VideoHero } from "@/components/VideoHero";
-import { HowItWorks } from "@/components/HowItWorks";
-import { Programs } from "@/components/Programs";
+import { WhyItWorks } from "@/components/WhyItWorks";
 import { Testimonials } from "@/components/Testimonials";
 import { UpcomingPlatform } from "@/components/UpcomingPlatform";
 
@@ -16,13 +15,12 @@ export default function Home() {
       <VideoHero />
       <Hero />
       <AboutCoach />
-      <Programs />
-      <Testimonials />
-      <HowItWorks />
+      <Mindset />
       <UpcomingPlatform />
+      <WhyItWorks />
+      <Testimonials />
       <FAQ />
       <ContactForm />
-      <FinalCTA />
       <Footer />
     </>
   );

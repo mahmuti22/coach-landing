@@ -61,18 +61,6 @@ export function Hero() {
                   {hero.secondaryCta.label}
                 </a>
               </div>
-              <div className="grid w-full grid-cols-3 gap-3 border-t border-white/[0.08] pt-8 sm:w-auto sm:border-l sm:border-t-0 sm:pl-8 sm:pt-0">
-                {hero.stats.map((stat) => (
-                  <div key={stat.label} className="text-left sm:min-w-[4.5rem]">
-                    <p className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-                      {stat.value}
-                    </p>
-                    <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
           <div className="metal-border card-hover-3d group relative z-[1] min-h-[17rem] overflow-hidden rounded-2xl bg-black/40 shadow-[0_24px_80px_-20px_rgba(0,0,0,0.85)] sm:min-h-[22rem] lg:min-h-0">

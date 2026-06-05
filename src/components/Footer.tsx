@@ -19,6 +19,14 @@ export function Footer() {
         </div>
         <p className="shrink-0 sm:text-right">{footer.secondaryLine}</p>
       </div>
+      <div className="mx-auto mt-8 w-full max-w-6xl border-t border-white/[0.05] pt-6 text-center">
+        <a
+          href={footer.credit.href}
+          className="text-[11px] text-zinc-600 transition hover:text-zinc-400"
+        >
+          {footer.credit.label}
+        </a>
+      </div>
     </footer>
   );
 }

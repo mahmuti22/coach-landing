@@ -3,7 +3,7 @@
 import type { FormEvent } from "react";
 import { useCallback, useState } from "react";
 import { buildApplicationMailto } from "@/config/contact";
-import { GOOGLE_FORM_ACTION, GOOGLE_FORM_FIELDS } from "@/config/google-form";
+import { FORMSPREE_ENDPOINT } from "@/config/formspree";
 import { content } from "@/data/content";
 import { PrimarySubmitButton } from "./PrimaryButton";
 import { SectionContainer } from "./SectionContainer";
@@ -15,25 +15,31 @@ type FieldErrors = Partial<
   Record<"firstName" | "lastName" | "email" | "message", string>
 >;
 
-async function submitToGoogleForm(payload: {
+async function submitToFormspree(payload: {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
   message: string;
 }): Promise<void> {
-  const formData = new FormData();
-  formData.append(GOOGLE_FORM_FIELDS.firstName, payload.firstName);
-  formData.append(GOOGLE_FORM_FIELDS.lastName, payload.lastName);
-  formData.append(GOOGLE_FORM_FIELDS.email, payload.email);
-  formData.append(GOOGLE_FORM_FIELDS.phone, payload.phone);
-  formData.append(GOOGLE_FORM_FIELDS.message, payload.message);
-
-  await fetch(GOOGLE_FORM_ACTION, {
+  const response = await fetch(FORMSPREE_ENDPOINT, {
     method: "POST",
-    mode: "no-cors",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      Vorname: payload.firstName,
+      Nachname: payload.lastName,
+      email: payload.email,
+      Telefon: payload.phone,
+      Nachricht: payload.message,
+    }),
   });
+
+  if (!response.ok) {
+    throw new Error("Formspree request failed");
+  }
 }
 
 export function ContactForm() {
@@ -48,19 +54,21 @@ export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const { errors: errorMessages } = contactForm;
+
   const validate = useCallback((): boolean => {
     const next: FieldErrors = {};
-    if (!firstName.trim()) next.firstName = "Required";
-    if (!lastName.trim()) next.lastName = "Required";
-    if (!email.trim()) next.email = "Required";
-    else if (!emailPattern.test(email.trim())) next.email = "Enter a valid email";
-    if (!message.trim()) next.message = "Required";
+    if (!firstName.trim()) next.firstName = errorMessages.required;
+    if (!lastName.trim()) next.lastName = errorMessages.required;
+    if (!email.trim()) next.email = errorMessages.required;
+    else if (!emailPattern.test(email.trim())) next.email = errorMessages.email;
+    if (!message.trim()) next.message = errorMessages.required;
     else if (message.trim().length < 10) {
-      next.message = "Please enter at least 10 characters";
+      next.message = errorMessages.messageLength;
     }
     setErrors(next);
     return Object.keys(next).length === 0;
-  }, [firstName, lastName, email, message]);
+  }, [firstName, lastName, email, message, errorMessages]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -78,7 +86,7 @@ export function ContactForm() {
     setError(null);
 
     try {
-      await submitToGoogleForm(payload);
+      await submitToFormspree(payload);
       setIsSubmitted(true);
     } catch {
       try {
@@ -86,7 +94,7 @@ export function ContactForm() {
         window.open(mailtoUrl, "_blank", "noopener,noreferrer");
         setIsSubmitted(true);
       } catch {
-        setError("Something went wrong. Please try again or email us directly.");
+        setError(errorMessages.generic);
       }
     } finally {
       setIsSubmitting(false);
@@ -107,7 +115,7 @@ export function ContactForm() {
       {isSubmitted ? (
         <div className="metal-border mx-auto max-w-xl rounded-2xl px-8 py-10 text-center">
           <p className="text-lg font-medium leading-relaxed tracking-tight text-white">
-            ✓ Request received. We&apos;ll be in touch within 48 hours.
+            {contactForm.successMessage}
           </p>
         </div>
       ) : (
@@ -122,7 +130,7 @@ export function ContactForm() {
                 htmlFor="firstName"
                 className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500"
               >
-                First name
+                {contactForm.labels.firstName}
               </label>
               <input
                 id="firstName"
@@ -147,7 +155,7 @@ export function ContactForm() {
                 htmlFor="lastName"
                 className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500"
               >
-                Last name
+                {contactForm.labels.lastName}
               </label>
               <input
                 id="lastName"
@@ -174,7 +182,7 @@ export function ContactForm() {
               htmlFor="email"
               className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500"
             >
-              Email
+              {contactForm.labels.email}
             </label>
             <input
               id="email"
@@ -201,7 +209,10 @@ export function ContactForm() {
               htmlFor="phone"
               className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500"
             >
-              Phone <span className="font-normal text-zinc-600">(optional)</span>
+              {contactForm.labels.phone}{" "}
+              <span className="font-normal text-zinc-600">
+                {contactForm.labels.phoneOptional}
+              </span>
             </label>
             <input
               id="phone"
@@ -220,7 +231,7 @@ export function ContactForm() {
               htmlFor="message"
               className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500"
             >
-              Message / goal
+              {contactForm.labels.message}
             </label>
             <textarea
               id="message"
@@ -242,7 +253,11 @@ export function ContactForm() {
 
           <div className="pt-2">
             <PrimarySubmitButton
-              label={isSubmitting ? "Sending..." : contactForm.submitLabel}
+              label={
+                isSubmitting
+                  ? contactForm.submittingLabel
+                  : contactForm.submitLabel
+              }
               disabled={isSubmitting}
             />
           </div>
