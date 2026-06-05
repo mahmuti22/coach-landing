@@ -13,7 +13,7 @@ export function AboutCoach() {
         title={aboutCoach.heading.title}
       />
 
-      <div className="mb-10 flex max-w-3xl flex-col gap-5 sm:mb-12 lg:mb-14">
+      <div className="mb-10 flex max-w-3xl flex-col gap-5 sm:mb-12 lg:mb-14 xl:max-w-4xl 2xl:max-w-5xl">
         {aboutCoach.intro.map((paragraph) => (
           <p
             key={paragraph.slice(0, 24)}

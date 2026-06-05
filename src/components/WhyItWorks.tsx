@@ -12,7 +12,7 @@ export function WhyItWorks() {
         title={whyItWorks.heading.title}
       />
 
-      <div className="flex max-w-3xl flex-col gap-5">
+      <div className="flex max-w-3xl flex-col gap-5 xl:max-w-4xl 2xl:max-w-5xl">
         {whyItWorks.body.map((paragraph) => (
           <p
             key={paragraph.slice(0, 24)}

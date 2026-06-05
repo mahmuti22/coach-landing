@@ -11,10 +11,10 @@ export function UpcomingPlatform() {
         <p className="steel-eyebrow text-[11px] font-semibold uppercase tracking-[0.28em]">
           {heading.eyebrow}
         </p>
-        <h2 className="steel-heading max-w-3xl text-3xl font-semibold tracking-[-0.02em] sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]">
+        <h2 className="steel-heading max-w-3xl text-3xl font-semibold tracking-[-0.02em] sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12] xl:max-w-4xl 2xl:max-w-5xl">
           {heading.title}
         </h2>
-        <p className="max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed">
+        <p className="max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed xl:max-w-3xl 2xl:max-w-4xl">
           {heading.description}
         </p>
       </div>

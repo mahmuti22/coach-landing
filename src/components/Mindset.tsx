@@ -12,7 +12,7 @@ export function Mindset() {
         title={mindset.heading.title}
       />
 
-      <div className="flex max-w-3xl flex-col gap-5">
+      <div className="flex max-w-3xl flex-col gap-5 xl:max-w-4xl 2xl:max-w-5xl">
         <p className="text-lg font-semibold text-zinc-200 sm:text-xl">
           {mindset.lead}
         </p>

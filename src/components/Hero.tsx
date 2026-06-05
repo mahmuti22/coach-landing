@@ -44,7 +44,7 @@ export function Hero() {
               <h1 className="steel-heading-bright max-w-[22ch] text-4xl font-semibold tracking-[-0.03em] sm:max-w-none sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
                 {hero.headline}
               </h1>
-              <p className="max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed">
+              <p className="max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg sm:leading-relaxed xl:max-w-2xl 2xl:max-w-3xl">
                 {hero.description}
               </p>
             </div>
